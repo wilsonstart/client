@@ -91,7 +91,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         updatedAt: course.updated_at
       },
       recommendedTitle: recommended.recommended?.section?.title,
-      recommendedGames: recommended.recommended?.section?.courses.map(
+      recommendedCourses: recommended.recommended?.section?.courses.map(
         (course) => ({
           id: course.id,
           title: course.name,

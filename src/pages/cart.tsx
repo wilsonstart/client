@@ -25,7 +25,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     props: {
       session,
       recommendedTitle: data.recommended?.section?.title,
-      recommendedGames: data.recommended?.section?.courses.map((course) => ({
+      recommendedCourses: data.recommended?.section?.courses.map((course) => ({
         id: course.id,
         title: course.name,
         slug: course.slug,
