@@ -1,12 +1,15 @@
 import Empty from 'components/Empty'
-import GameItem, { GameItemProps, PaymentInfoProps } from 'components/GameItem'
+import CourseItem, {
+  CourseItemProps,
+  PaymentInfoProps
+} from 'components/CourseItem'
 import Heading from 'components/Heading'
 import * as S from './styles'
 
 type OrderProps = {
   id: string
   paymentInfo: PaymentInfoProps
-  games: GameItemProps[]
+  courses: CourseItemProps[]
 }
 
 export type OrdersListProps = {
@@ -21,10 +24,10 @@ const OrdersList = ({ items = [] }: OrdersListProps) => (
 
     {items.length ? (
       items.map((order) => {
-        return order.games.map((game) => (
-          <GameItem
-            key={`${order.id}-${game.id}`}
-            {...game}
+        return order.courses.map((course) => (
+          <CourseItem
+            key={`${order.id}-${course.id}`}
+            {...course}
             paymentInfo={order.paymentInfo}
           />
         ))

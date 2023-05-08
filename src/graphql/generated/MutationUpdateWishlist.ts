@@ -9,30 +9,31 @@ import { updateWishlistInput } from "./globalTypes";
 // GraphQL mutation operation: MutationUpdateWishlist
 // ====================================================
 
-export interface MutationUpdateWishlist_updateWishlist_wishlist_games_cover {
+export interface MutationUpdateWishlist_updateWishlist_wishlist_courses_cover {
   __typename: "UploadFile";
   url: string;
 }
 
-export interface MutationUpdateWishlist_updateWishlist_wishlist_games_developers {
-  __typename: "Developer";
+export interface MutationUpdateWishlist_updateWishlist_wishlist_courses_instructor {
+  __typename: "Instructor";
   name: string;
 }
 
-export interface MutationUpdateWishlist_updateWishlist_wishlist_games {
-  __typename: "Game";
+export interface MutationUpdateWishlist_updateWishlist_wishlist_courses {
+  __typename: "Course";
   id: string;
   name: string;
-  slug: string;
-  cover: MutationUpdateWishlist_updateWishlist_wishlist_games_cover | null;
-  developers: MutationUpdateWishlist_updateWishlist_wishlist_games_developers[];
+  slug: string | null;
+  cover: MutationUpdateWishlist_updateWishlist_wishlist_courses_cover | null;
+  instructor: MutationUpdateWishlist_updateWishlist_wishlist_courses_instructor | null;
   price: number;
+  promotion_price: number | null;
 }
 
 export interface MutationUpdateWishlist_updateWishlist_wishlist {
   __typename: "Wishlist";
   id: string;
-  games: MutationUpdateWishlist_updateWishlist_wishlist_games[];
+  courses: MutationUpdateWishlist_updateWishlist_wishlist_courses[];
 }
 
 export interface MutationUpdateWishlist_updateWishlist {

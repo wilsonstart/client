@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 import Base from 'templates/Base'
 
 import { Container } from 'components/Container'
-import { GameCardProps } from 'components/GameCard'
+import { CourseCardProps } from 'components/CourseCard'
 import Showcase from 'components/Showcase'
 import { HighlightProps } from 'components/Highlight'
 
@@ -14,13 +14,13 @@ import { useCart } from 'hooks/use-cart'
 
 export type SuccessTemplateProps = {
   recommendedTitle: string
-  recommendedGames: GameCardProps[]
+  recommendedCourses: CourseCardProps[]
   recommendedHighlight: HighlightProps
 }
 
 const Success = ({
   recommendedTitle,
-  recommendedGames
+  recommendedCourses
 }: SuccessTemplateProps) => {
   const { clearCart } = useCart()
 
@@ -50,7 +50,7 @@ const Success = ({
         </S.Wrapper>
       </Container>
 
-      <Showcase title={recommendedTitle} games={recommendedGames} />
+      <Showcase title={recommendedTitle} courses={recommendedCourses} />
     </Base>
   )
 }

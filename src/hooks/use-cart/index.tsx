@@ -1,4 +1,4 @@
-import { useQueryGames } from 'graphql/queries/games'
+import { useQueryCourses } from 'graphql/queries/courses'
 import { useContext, createContext, useState, useEffect } from 'react'
 import formatPrice from 'utils/format-price'
 import { getStorageItem, setStorageItem } from 'utils/localStorage'
@@ -54,7 +54,7 @@ const CartProvider = ({ children }: CartProviderProps) => {
     }
   }, [])
 
-  const { data, loading } = useQueryGames({
+  const { data, loading } = useQueryCourses({
     skip: !cartItems?.length,
     variables: {
       where: {
@@ -63,8 +63,8 @@ const CartProvider = ({ children }: CartProviderProps) => {
     }
   })
 
-  const total = data?.games.reduce((acc, game) => {
-    return acc + game.price
+  const total = data?.courses.reduce((acc, course) => {
+    return acc + course.price
   }, 0)
 
   const isInCart = (id: string) => (id ? cartItems.includes(id) : false)
@@ -90,7 +90,7 @@ const CartProvider = ({ children }: CartProviderProps) => {
   return (
     <CartContext.Provider
       value={{
-        items: cartMapper(data?.games),
+        items: cartMapper(data?.courses),
         quantity: cartItems.length,
         total: formatPrice(total || 0),
         isInCart,

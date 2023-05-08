@@ -22,8 +22,8 @@ export interface QueryCourses_courses {
   id: string;
   name: string;
   slug: string;
-  cover: QueryCourses_courses_cover;
-  instructor: QueryCourses_courses_instructor;
+  cover: QueryCourses_courses_cover ;
+  instructor: QueryCourses_courses_instructor ;
   price: number;
   promotion_price: number;
 }

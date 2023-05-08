@@ -1,13 +1,11 @@
 import { Story, Meta } from '@storybook/react/types-6-0'
 import OrdersList, { OrdersListProps } from '.'
 
-import itemsMock from './mock'
-
 export default {
   title: 'Profile/OrdersList',
   component: OrdersList,
   args: {
-    items: itemsMock
+    items: []
   }
 } as Meta<OrdersListProps>
 

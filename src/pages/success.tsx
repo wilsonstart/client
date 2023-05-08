@@ -3,7 +3,8 @@ import Success, { SuccessTemplateProps } from 'templates/Success'
 import { initializeApollo } from 'utils/apollo'
 import { QueryRecommended } from 'graphql/generated/QueryRecommended'
 import { QUERY_RECOMMENDED } from 'graphql/queries/recommended'
-import { gamesMapper, highlightMapper } from 'utils/mappers'
+import { highlightMapper } from 'utils/mappers'
+import { getImageUrl } from 'utils/getImageUrl'
 
 export default function SuccessPage(props: SuccessTemplateProps) {
   return <Success {...props} />
@@ -20,7 +21,15 @@ export async function getStaticProps() {
     revalidate: 60 * 60,
     props: {
       recommendedTitle: data.recommended?.section?.title,
-      recommendedGames: gamesMapper(data.recommended?.section?.games),
+      recommendedCourses: data.recommended?.section?.courses.map((course) => ({
+        id: course.id,
+        title: course.name,
+        slug: course.slug,
+        instructor: course.instructor?.name,
+        img: `${getImageUrl(course.cover?.url)}`,
+        price: course.price,
+        promotionPrice: course.promotion_price
+      })),
       recommendedHighlight: highlightMapper(
         data.recommended?.section?.highlight
       )

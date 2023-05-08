@@ -15,12 +15,7 @@ import {
 import { GetStaticProps } from 'next'
 import { QueryRecommended } from 'graphql/generated/QueryRecommended'
 import { QUERY_RECOMMENDED } from 'graphql/queries/recommended'
-import { gamesMapper, highlightMapper } from 'utils/mappers'
-import {
-  QueryUpcoming,
-  QueryUpcomingVariables
-} from 'graphql/generated/QueryUpcoming'
-import { QUERY_UPCOMING } from 'graphql/queries/upcoming'
+
 import { getImageUrl } from 'utils/getImageUrl'
 
 const apolloClient = initializeApollo()
@@ -96,7 +91,17 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         updatedAt: course.updated_at
       },
       recommendedTitle: recommended.recommended?.section?.title,
-      recommendedGames: gamesMapper(recommended.recommended?.section?.games)
+      recommendedGames: recommended.recommended?.section?.courses.map(
+        (course) => ({
+          id: course.id,
+          title: course.name,
+          slug: course.slug,
+          instructor: course.instructor?.name,
+          img: `${getImageUrl(course.cover?.url)}`,
+          price: course.price,
+          promotionPrice: course.promotion_price
+        })
+      )
     }
   }
 }

@@ -1,9 +1,9 @@
 import { useApolloClient, useMutation } from '@apollo/client'
-import { GameCardProps } from 'components/GameCard'
-import { GameFragment } from 'graphql/fragments/game'
+import { CourseCardProps } from 'components/CourseCard'
+import { CourseFragment } from 'graphql/fragments/course'
 import {
   QueryWishlist,
-  QueryWishlist_wishlists_games
+  QueryWishlist_wishlists_courses
 } from 'graphql/generated/QueryWishlist'
 import {
   MUTATION_CREATE_WISHLIST,
@@ -14,10 +14,10 @@ import { useSession } from 'next-auth/client'
 import { useMemo } from 'react'
 import { useState } from 'react'
 import { createContext, useContext, useEffect } from 'react'
-import { gamesMapper } from 'utils/mappers'
+import { getImageUrl } from 'utils/getImageUrl'
 
 export type WishlistContextData = {
-  items: GameCardProps[]
+  items: CourseCardProps[]
   isInWishlist: (id: string) => boolean
   addToWishlist: (id: string) => void
   removeFromWishlist: (id: string) => void
@@ -44,7 +44,7 @@ const WishlistProvider = ({ children }: WishlistProviderProps) => {
   const [session] = useSession()
   const [wishlistId, setWishlistId] = useState<string | null>()
   const [wishlistItems, setWishlistItems] = useState<
-    QueryWishlist_wishlists_games[]
+    QueryWishlist_wishlists_courses[]
   >([])
   const apolloClient = useApolloClient()
 
@@ -53,7 +53,7 @@ const WishlistProvider = ({ children }: WishlistProviderProps) => {
     {
       context: { session },
       onCompleted: (data) => {
-        setWishlistItems(data?.createWishlist?.wishlist?.games || [])
+        setWishlistItems(data?.createWishlist?.wishlist?.courses || [])
         setWishlistId(data?.createWishlist?.wishlist?.id)
       }
     }
@@ -64,7 +64,7 @@ const WishlistProvider = ({ children }: WishlistProviderProps) => {
     {
       context: { session },
       onCompleted: (data) => {
-        setWishlistItems(data?.updateWishlist?.wishlist?.games || [])
+        setWishlistItems(data?.updateWishlist?.wishlist?.courses || [])
       }
     }
   )
@@ -80,27 +80,27 @@ const WishlistProvider = ({ children }: WishlistProviderProps) => {
   const { data, loading: loadingQuery } = useQueryWishlist(options)
 
   useEffect(() => {
-    setWishlistItems(data?.wishlists[0]?.games || [])
+    setWishlistItems(data?.wishlists[0]?.courses || [])
     setWishlistId(data?.wishlists[0]?.id)
   }, [data])
 
   const wishlistIds = useMemo(
-    () => wishlistItems.map((game) => game.id),
+    () => wishlistItems.map((course) => course.id),
     [wishlistItems]
   )
 
   const isInWishlist = (id: string) =>
-    wishlistItems.some((game) => game.id === id)
+    wishlistItems.some((course) => course.id === id)
 
-  const optimisticGameResponse = (id: string) => {
-    const game = apolloClient.readFragment({
-      id: `Game:${id}`,
-      fragment: GameFragment
+  const optimisticCourseResponse = (id: string) => {
+    const course = apolloClient.readFragment({
+      id: `Course:${id}`,
+      fragment: CourseFragment
     })
 
     return (
-      game ?? {
-        __typename: 'Game',
+      course ?? {
+        __typename: 'Course',
         id,
         name: '',
         slug: '',
@@ -108,13 +108,14 @@ const WishlistProvider = ({ children }: WishlistProviderProps) => {
           __typename: 'UploadFile',
           url: ''
         },
-        developers: [
+        instructor: [
           {
-            __typename: 'Developer',
+            __typename: 'Instructor',
             name: ''
           }
         ],
-        price: ''
+        price: '',
+        promotion_price: ''
       }
     )
   }
@@ -123,12 +124,12 @@ const WishlistProvider = ({ children }: WishlistProviderProps) => {
     // se não existir wishlist - cria
     if (!wishlistId) {
       return createList({
-        variables: { input: { data: { games: [...wishlistItems, id] } } },
+        variables: { input: { data: { courses: [...wishlistItems, id] } } },
         optimisticResponse: {
           createWishlist: {
             wishlist: {
               id: String(Math.round(Math.random() * -1000000)),
-              games: [optimisticGameResponse(id)],
+              courses: [optimisticCourseResponse(id)],
               __typename: 'Wishlist'
             },
             __typename: 'createWishlistPayload'
@@ -160,14 +161,14 @@ const WishlistProvider = ({ children }: WishlistProviderProps) => {
       variables: {
         input: {
           where: { id: wishlistId },
-          data: { games: [...wishlistIds, id] }
+          data: { courses: [...wishlistIds, id] }
         }
       },
       optimisticResponse: {
         updateWishlist: {
           wishlist: {
             id: wishlistId,
-            games: [...wishlistItems, optimisticGameResponse(id)],
+            courses: [...wishlistItems, optimisticCourseResponse(id)],
             __typename: 'Wishlist'
           },
           __typename: 'updateWishlistPayload'
@@ -181,14 +182,18 @@ const WishlistProvider = ({ children }: WishlistProviderProps) => {
       variables: {
         input: {
           where: { id: wishlistId },
-          data: { games: wishlistIds.filter((gameId: string) => gameId !== id) }
+          data: {
+            courses: wishlistIds.filter((courseId: string) => courseId !== id)
+          }
         }
       },
       optimisticResponse: {
         updateWishlist: {
           wishlist: {
             id: wishlistId,
-            games: wishlistItems.filter(({ id: gameId }) => gameId !== id),
+            courses: wishlistItems.filter(
+              ({ id: courseId }) => courseId !== id
+            ),
             __typename: 'Wishlist'
           },
           __typename: 'updateWishlistPayload'
@@ -200,7 +205,15 @@ const WishlistProvider = ({ children }: WishlistProviderProps) => {
   return (
     <WishlistContext.Provider
       value={{
-        items: gamesMapper(wishlistItems),
+        items: wishlistItems.map((course) => ({
+          id: course.id,
+          title: course.name,
+          slug: course.slug,
+          instructor: course.instructor?.name,
+          img: `${getImageUrl(course.cover?.url)}`,
+          price: course.price,
+          promotionPrice: course.promotion_price
+        })),
         isInWishlist,
         addToWishlist,
         removeFromWishlist,

@@ -29,7 +29,7 @@ export interface QueryHome_banners_ribbon {
 
 export interface QueryHome_banners {
   __typename: "Banner";
-  image: QueryHome_banners_image;
+  image: QueryHome_banners_image | null;
   title: string;
   subtitle: string;
   button: QueryHome_banners_button | null;
@@ -50,11 +50,11 @@ export interface QueryHome_freeCourses {
   __typename: "Course";
   id: string;
   name: string;
-  slug: string;
-  cover: QueryHome_freeCourses_cover;
-  instructor: QueryHome_freeCourses_instructor;
+  slug: string | null;
+  cover: QueryHome_freeCourses_cover | null;
+  instructor: QueryHome_freeCourses_instructor | null;
   price: number;
-  promotion_price: number;
+  promotion_price: number | null;
 }
 
 export interface QueryHome_sections_popularCourses_highlight_background {

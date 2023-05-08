@@ -2,11 +2,10 @@ import Base from 'templates/Base'
 
 import Heading from 'components/Heading'
 import Showcase from 'components/Showcase'
-import GameCard, { GameCardProps } from 'components/GameCard'
+import CourseCard, { CourseCardProps } from 'components/CourseCard'
 import { Divider } from 'components/Divider'
 import { Container } from 'components/Container'
 import { Grid } from 'components/Grid'
-import { HighlightProps } from 'components/Highlight'
 import Empty from 'components/Empty'
 import { useWishlist } from 'hooks/use-wishlist'
 import Loader from 'components/Loader'
@@ -15,14 +14,12 @@ import * as S from './styles'
 
 export type WishlistTemplateProps = {
   recommendedTitle: string
-  recommendedGames: GameCardProps[]
-  recommendedHighlight: HighlightProps
+  recommendedCourses: CourseCardProps[]
 }
 
 const Wishlist = ({
   recommendedTitle,
-  recommendedGames,
-  recommendedHighlight
+  recommendedCourses
 }: WishlistTemplateProps) => {
   const { items, loading } = useWishlist()
 
@@ -39,8 +36,8 @@ const Wishlist = ({
           </S.Loading>
         ) : items.length >= 1 ? (
           <Grid>
-            {items?.map((game, index) => (
-              <GameCard key={`wishlist-${index}`} {...game} />
+            {items?.map((course, index) => (
+              <CourseCard key={`wishlist-${index}`} {...course} />
             ))}
           </Grid>
         ) : (
@@ -53,7 +50,7 @@ const Wishlist = ({
         <Divider />
       </Container>
 
-      <Showcase title={recommendedTitle} games={recommendedGames} />
+      <Showcase title={recommendedTitle} courses={recommendedCourses} />
     </Base>
   )
 }

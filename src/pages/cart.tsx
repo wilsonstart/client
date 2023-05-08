@@ -1,7 +1,8 @@
 import { initializeApollo } from 'utils/apollo'
 import { QueryRecommended } from 'graphql/generated/QueryRecommended'
 import { QUERY_RECOMMENDED } from 'graphql/queries/recommended'
-import { gamesMapper, highlightMapper } from 'utils/mappers'
+import { highlightMapper } from 'utils/mappers'
+import { getImageUrl } from 'utils/getImageUrl'
 
 import Cart, { CartProps } from 'templates/Cart'
 
@@ -24,7 +25,15 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     props: {
       session,
       recommendedTitle: data.recommended?.section?.title,
-      recommendedGames: gamesMapper(data.recommended?.section?.games),
+      recommendedGames: data.recommended?.section?.courses.map((course) => ({
+        id: course.id,
+        title: course.name,
+        slug: course.slug,
+        instructor: course.instructor?.name,
+        img: `${getImageUrl(course.cover?.url)}`,
+        price: course.price,
+        promotionPrice: course.promotion_price
+      })),
       recommendedHighlight: highlightMapper(
         data.recommended?.section?.highlight
       )

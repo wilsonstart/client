@@ -1,5 +1,4 @@
 import { gql, QueryHookOptions, useQuery } from '@apollo/client'
-import { GameFragment } from 'graphql/fragments/game'
 import { CourseFragment } from 'graphql/fragments/course'
 import {
   QueryWishlist,
@@ -10,12 +9,12 @@ export const QUERY_WISHLIST = gql`
   query QueryWishlist($identifier: String!) {
     wishlists(where: { user: { email: $identifier } }) {
       id
-      games {
-        ...GameFragment
+      courses {
+        ...CourseFragment
       }
     }
   }
-  ${GameFragment}
+  ${CourseFragment}
 `
 
 export function useQueryWishlist(

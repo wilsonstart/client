@@ -6,14 +6,14 @@ import formatPrice from 'utils/format-price'
 
 import * as S from './styles'
 
-export type GameInfoProps = {
+export type CourseInfoProps = {
   id: string
   title: string
   description: string
   price: number
 }
 
-const GameInfo = ({ id, title, description, price }: GameInfoProps) => (
+const CourseInfo = ({ id, title, description, price }: CourseInfoProps) => (
   <S.Wrapper data-cy="game-info">
     <Heading color="black" lineBottom>
       {title}
@@ -30,4 +30,4 @@ const GameInfo = ({ id, title, description, price }: GameInfoProps) => (
   </S.Wrapper>
 )
 
-export default GameInfo
+export default CourseInfo

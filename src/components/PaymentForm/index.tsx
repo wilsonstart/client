@@ -29,7 +29,7 @@ const PaymentForm = ({ session }: PaymentFormProps) => {
   const [loading, setLoading] = useState(false)
   const [disabled, setDisabled] = useState(true)
   const [clientSecret, setClientSecret] = useState('')
-  const [freeGames, setFreeGames] = useState(false)
+  const [freeCourses, setFreeCourses] = useState(false)
 
   useEffect(() => {
     async function setPaymentMode() {
@@ -40,10 +40,10 @@ const PaymentForm = ({ session }: PaymentFormProps) => {
           token: session.jwt as string
         })
 
-        // se eu receber freeGames: true => setFreeGames
-        // faço o fluxo de jogo gratuito
-        if (data.freeGames) {
-          setFreeGames(true)
+        // se eu receber freeCourses: true => setFreeCourses
+        // faço o fluxo de curso gratuito
+        if (data.freeCourses) {
+          setFreeCourses(true)
           return
         }
 
@@ -54,7 +54,7 @@ const PaymentForm = ({ session }: PaymentFormProps) => {
         } else {
           // senão o paymentIntent foi válido
           // setClientSecret
-          setFreeGames(false)
+          setFreeCourses(false)
           setClientSecret(data.client_secret)
         }
       }
@@ -82,8 +82,8 @@ const PaymentForm = ({ session }: PaymentFormProps) => {
     event.preventDefault()
     setLoading(true)
 
-    // se for freeGames
-    if (freeGames) {
+    // se for freeCourses
+    if (freeCourses) {
       // salva no banco
       // bater na API /orders
       saveOrder()
@@ -123,7 +123,7 @@ const PaymentForm = ({ session }: PaymentFormProps) => {
             Pagamento
           </Heading>
 
-          {freeGames ? (
+          {freeCourses ? (
             <S.FreeGames>
               Para cursos gratuitos, basta clicar em comprar agora e bons
               estudos!
@@ -158,7 +158,7 @@ const PaymentForm = ({ session }: PaymentFormProps) => {
           <Button
             fullWidth
             icon={loading ? <FormLoading /> : <ShoppingCart />}
-            disabled={!freeGames && (disabled || !!error || loading)}
+            disabled={!freeCourses && (disabled || !!error || loading)}
           >
             {!loading && <span>Comprar agora</span>}
           </Button>

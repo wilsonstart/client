@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import * as GameItemStyles from 'components/GameItem/styles'
+import * as CourseItemStyles from 'components/CourseItem/styles'
 
 export const Wrapper = styled.div`
-  ${GameItemStyles.Wrapper} {
+  ${CourseItemStyles.Wrapper} {
     &:last-child {
       border-bottom: 0;
     }

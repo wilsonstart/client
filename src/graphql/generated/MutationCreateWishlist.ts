@@ -9,30 +9,31 @@ import { createWishlistInput } from "./globalTypes";
 // GraphQL mutation operation: MutationCreateWishlist
 // ====================================================
 
-export interface MutationCreateWishlist_createWishlist_wishlist_games_cover {
+export interface MutationCreateWishlist_createWishlist_wishlist_courses_cover {
   __typename: "UploadFile";
   url: string;
 }
 
-export interface MutationCreateWishlist_createWishlist_wishlist_games_developers {
-  __typename: "Developer";
+export interface MutationCreateWishlist_createWishlist_wishlist_courses_instructor {
+  __typename: "Instructor";
   name: string;
 }
 
-export interface MutationCreateWishlist_createWishlist_wishlist_games {
-  __typename: "Game";
+export interface MutationCreateWishlist_createWishlist_wishlist_courses {
+  __typename: "Course";
   id: string;
   name: string;
-  slug: string;
-  cover: MutationCreateWishlist_createWishlist_wishlist_games_cover | null;
-  developers: MutationCreateWishlist_createWishlist_wishlist_games_developers[];
+  slug: string | null;
+  cover: MutationCreateWishlist_createWishlist_wishlist_courses_cover | null;
+  instructor: MutationCreateWishlist_createWishlist_wishlist_courses_instructor | null;
   price: number;
+  promotion_price: number | null;
 }
 
 export interface MutationCreateWishlist_createWishlist_wishlist {
   __typename: "Wishlist";
   id: string;
-  games: MutationCreateWishlist_createWishlist_wishlist_games[];
+  courses: MutationCreateWishlist_createWishlist_wishlist_courses[];
 }
 
 export interface MutationCreateWishlist_createWishlist {

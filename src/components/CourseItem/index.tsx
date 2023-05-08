@@ -11,7 +11,7 @@ export type PaymentInfoProps = {
   purchaseDate: string
 }
 
-export type GameItemProps = {
+export type CourseItemProps = {
   id: string
   img: string
   title: string
@@ -20,14 +20,14 @@ export type GameItemProps = {
   paymentInfo?: PaymentInfoProps
 }
 
-const GameItem = ({
+const CourseItem = ({
   id,
   img,
   title,
   price,
   downloadLink,
   paymentInfo
-}: GameItemProps) => {
+}: CourseItemProps) => {
   const { isInCart, removeFromCart } = useCart()
 
   return (
@@ -79,4 +79,4 @@ const GameItem = ({
   )
 }
 
-export default GameItem
+export default CourseItem

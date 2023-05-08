@@ -7,24 +7,25 @@
 // GraphQL query operation: QueryOrders
 // ====================================================
 
-export interface QueryOrders_orders_games_cover {
+export interface QueryOrders_orders_courses_cover {
   __typename: "UploadFile";
   url: string;
 }
 
-export interface QueryOrders_orders_games_developers {
-  __typename: "Developer";
+export interface QueryOrders_orders_courses_instructor {
+  __typename: "Instructor";
   name: string;
 }
 
-export interface QueryOrders_orders_games {
-  __typename: "Game";
+export interface QueryOrders_orders_courses {
+  __typename: "Course";
   id: string;
   name: string;
-  slug: string;
-  cover: QueryOrders_orders_games_cover | null;
-  developers: QueryOrders_orders_games_developers[];
+  slug: string | null;
+  cover: QueryOrders_orders_courses_cover | null;
+  instructor: QueryOrders_orders_courses_instructor | null;
   price: number;
+  promotion_price: number | null;
 }
 
 export interface QueryOrders_orders {
@@ -33,7 +34,7 @@ export interface QueryOrders_orders {
   created_at: any;
   card_brand: string | null;
   card_last4: string | null;
-  games: QueryOrders_orders_games[];
+  courses: QueryOrders_orders_courses[];
 }
 
 export interface QueryOrders {

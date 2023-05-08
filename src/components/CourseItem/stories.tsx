@@ -1,20 +1,22 @@
 import { Story, Meta } from '@storybook/react/types-6-0'
-import GameItem, { GameItemProps } from '.'
+import CourseItem, { CourseItemProps } from '.'
 
 export default {
-  title: 'GameItem',
-  component: GameItem,
+  title: 'CourseItem',
+  component: CourseItem,
   args: {
     img: 'https://source.unsplash.com/user/willianjusten/151x70',
     title: 'Red Dead Redemption 2',
     price: 'R$ 215,00'
   }
-} as Meta<GameItemProps>
+} as Meta<CourseItemProps>
 
-export const Default: Story<GameItemProps> = (args) => <GameItem {...args} />
+export const Default: Story<CourseItemProps> = (args) => (
+  <CourseItem {...args} />
+)
 
-export const WithPayment: Story<GameItemProps> = (args) => (
-  <GameItem {...args} />
+export const WithPayment: Story<CourseItemProps> = (args) => (
+  <CourseItem {...args} />
 )
 
 WithPayment.args = {

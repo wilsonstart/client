@@ -2,13 +2,12 @@ import { NextSeo } from 'next-seo'
 
 import Base from 'templates/Base'
 
-import GameInfo, { GameInfoProps } from 'components/GameInfo'
+import CourseInfo, { CourseInfoProps } from 'components/CourseInfo'
 import CourseDetails, { CourseDetailsProps } from 'components/CourseDetails'
 import TextContent from 'components/TextContent'
 import Showcase from 'components/Showcase'
 import { Divider } from 'components/Divider'
-import { GameCardProps } from 'components/GameCard'
-import { HighlightProps } from 'components/Highlight'
+import { CourseCardProps } from 'components/CourseCard'
 
 import * as S from './styles'
 import Image from 'next/image'
@@ -16,24 +15,21 @@ import Image from 'next/image'
 export type CourseTemplateProps = {
   slug?: string
   cover: string
-  courseInfo: GameInfoProps
+  courseInfo: CourseInfoProps
   description: string
   details: CourseDetailsProps
-  upcomingTitle: string
-  upcomingGames: GameCardProps[]
-  upcomingHighlight: HighlightProps
   recommendedTitle: string
-  recommendedGames: GameCardProps[]
+  recommendedCourses: CourseCardProps[]
 }
 
-const Game = ({
+const Course = ({
   slug,
   cover,
   courseInfo,
   description,
   details,
   recommendedTitle,
-  recommendedGames
+  recommendedCourses
 }: CourseTemplateProps) => (
   <Base>
     <NextSeo
@@ -58,7 +54,7 @@ const Game = ({
 
     <S.Main>
       <S.SectionGameInfo>
-        <GameInfo {...courseInfo} />
+        <CourseInfo {...courseInfo} />
       </S.SectionGameInfo>
 
       <S.SectionGameDetails>
@@ -70,9 +66,9 @@ const Game = ({
         <Divider />
       </S.SectionDescription>
 
-      <Showcase title={recommendedTitle} games={recommendedGames} />
+      <Showcase title={recommendedTitle} courses={recommendedCourses} />
     </S.Main>
   </Base>
 )
 
-export default Game
+export default Course

@@ -22,15 +22,6 @@ export enum ENUM_COMPONENTPAGERIBBON_SIZE {
   small = "small",
 }
 
-export enum ENUM_GAME_RATING {
-  BR0 = "BR0",
-  BR10 = "BR10",
-  BR12 = "BR12",
-  BR14 = "BR14",
-  BR16 = "BR16",
-  BR18 = "BR18",
-}
-
 export interface InputID {
   id: string;
 }
@@ -43,7 +34,6 @@ export interface UsersPermissionsRegisterInput {
 
 export interface WishlistInput {
   user?: string | null;
-  games?: (string | null)[] | null;
   courses?: (string | null)[] | null;
   created_by?: string | null;
   updated_by?: string | null;
@@ -55,7 +45,6 @@ export interface createWishlistInput {
 
 export interface editWishlistInput {
   user?: string | null;
-  games?: (string | null)[] | null;
   courses?: (string | null)[] | null;
   created_by?: string | null;
   updated_by?: string | null;

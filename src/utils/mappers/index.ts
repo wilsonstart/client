@@ -1,9 +1,9 @@
-import { QueryGames_games } from 'graphql/generated/QueryGames'
+import { QueryCourses_courses } from 'graphql/generated/QueryCourses'
 import {
   QueryHome_banners,
   QueryHome_sections_freeCourses_highlight
 } from 'graphql/generated/QueryHome'
-import { QueryWishlist_wishlists_games } from 'graphql/generated/QueryWishlist'
+import { QueryWishlist_wishlists_courses } from 'graphql/generated/QueryWishlist'
 
 import { QueryOrders_orders } from 'graphql/generated/QueryOrders'
 
@@ -25,21 +25,6 @@ export const bannerMapper = (banners: QueryHome_banners[]) => {
   }))
 }
 
-export const gamesMapper = (
-  games: QueryGames_games[] | QueryWishlist_wishlists_games[] | null | undefined
-) => {
-  return games
-    ? games.map((game) => ({
-        id: game.id,
-        title: game.name,
-        slug: game.slug,
-        developer: game.developers[0].name,
-        img: `${getImageUrl(game.cover?.url)}`,
-        price: game.price
-      }))
-    : []
-}
-
 export const highlightMapper = (
   highlight: QueryHome_sections_freeCourses_highlight | null | undefined
 ) => {
@@ -56,13 +41,13 @@ export const highlightMapper = (
     : {}
 }
 
-export const cartMapper = (games: QueryGames_games[] | undefined) => {
-  return games
-    ? games.map((game) => ({
-        id: game.id,
-        img: `${getImageUrl(game.cover?.url)}`,
-        title: game.name,
-        price: formatPrice(game.price)
+export const cartMapper = (courses: QueryCourses_courses[] | undefined) => {
+  return courses
+    ? courses.map((course) => ({
+        id: course.id,
+        img: `${getImageUrl(course.cover?.url)}`,
+        title: course.name,
+        price: formatPrice(course.price)
       }))
     : []
 }
@@ -77,20 +62,20 @@ export const ordersMapper = (orders: QueryOrders_orders[] | undefined) => {
             img: order.card_brand ? `/img/cards/${order.card_brand}.png` : null,
             number: order.card_last4
               ? `**** **** **** ${order.card_last4}`
-              : 'Free Game',
+              : 'Curso gratuito',
             purchaseDate: `Compra feita em ${new Intl.DateTimeFormat('pt-BR', {
               day: 'numeric',
               month: 'numeric',
               year: 'numeric'
             }).format(new Date(order.created_at))}`
           },
-          games: order.games.map((game) => ({
-            id: game.id,
-            title: game.name,
+          courses: order.courses.map((course) => ({
+            id: course.id,
+            title: course.name,
             downloadLink:
               'https://wongames.com/game/download/yuYT56Tgh431LkjhNBgdf',
-            img: `${getImageUrl(game.cover?.url)}`,
-            price: formatPrice(game.price)
+            img: `${getImageUrl(course.cover?.url)}`,
+            price: formatPrice(course.price)
           }))
         }
       })

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Button from 'components/Button'
-import GameItem from 'components/GameItem'
+import CourseItem from 'components/CourseItem'
 
 import * as S from './styles'
 import Empty from 'components/Empty'
@@ -28,7 +28,7 @@ const CartList = ({ hasButton = false }: CartListProps) => {
         <>
           <S.GamesList>
             {items.map((item) => (
-              <GameItem key={item.title} {...item} />
+              <CourseItem key={item.title} {...item} />
             ))}
           </S.GamesList>
 

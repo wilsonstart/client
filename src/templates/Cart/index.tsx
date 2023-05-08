@@ -4,8 +4,7 @@ import { Elements } from '@stripe/react-stripe-js'
 
 import { Container } from 'components/Container'
 import { Divider } from 'components/Divider'
-import { GameCardProps } from 'components/GameCard'
-import { HighlightProps } from 'components/Highlight'
+import { CourseCardProps } from 'components/CourseCard'
 import PaymentForm from 'components/PaymentForm'
 import CartList, { CartListProps } from 'components/CartList'
 import Heading from 'components/Heading'
@@ -18,18 +17,12 @@ import * as S from './styles'
 export type CartProps = {
   session: Session
   recommendedTitle: string
-  recommendedGames: GameCardProps[]
-  recommendedHighlight: HighlightProps
+  recommendedCourses: CourseCardProps[]
 } & CartListProps
 
 const stripe = loadStripe(`${process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY}`)
 
-const Cart = ({
-  session,
-  recommendedTitle,
-  recommendedGames,
-  recommendedHighlight
-}: CartProps) => {
+const Cart = ({ session, recommendedTitle, recommendedCourses }: CartProps) => {
   return (
     <Base>
       <Container>
@@ -57,7 +50,7 @@ const Cart = ({
         <Divider />
       </Container>
 
-      <Showcase title={recommendedTitle} games={recommendedGames} />
+      <Showcase title={recommendedTitle} courses={recommendedCourses} />
     </Base>
   )
 }
