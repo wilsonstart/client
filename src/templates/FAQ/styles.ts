@@ -66,81 +66,81 @@ export const Heading = styled(Container)`
       margin-bottom: 0;
       padding-top: 14rem;
     `}
-  `}
-`
-
-export const Text = styled.p`
-  ${({ theme }) => css`
-    margin-bottom: 2.5rem;
-
-    strong {
-      color: ${theme.colors.primary};
-    }
-  `}
-
-  ${media.lessThan('medium')`
-      margin-bottom: 2rem;
+    ${media.lessThan('medium')`
+      margin-bottom: 5;
       padding-top: 1rem;
+      padding-bottom: 1.5rem;
+      font-size: ${theme.font.sizes.xxlarge};
     `}
+  `}
 `
 
 export const Accordion = styled.div`
-  cursor: pointer;
-  .accordion {
-    list-style-type: none;
-    padding-left: 0;
-    border: none;
-    margin: {
-      bottom: 0;
-    }
-    .accordion__item {
-      border-radius: 5px;
-      display: block;
-      box-shadow: 2px 8px 20px 0 rgba(25, 42, 70, 0.13) !important;
-      background: $white-color;
-      margin-bottom: 15px;
+  ${({ theme }) => css`
+    cursor: pointer;
+    .accordion {
+      list-style-type: none;
+      padding-left: 0;
       border: none;
-      border-radius: 5px;
+      margin: {
+        bottom: 0;
+      }
 
-      &:last-child {
-        margin-bottom: 0;
+      .accordion__item {
+        border-radius: 5px;
+        display: block;
+        box-shadow: 2px 8px 20px 0 rgba(25, 42, 70, 0.13) !important;
+        background: $white-color;
+        margin-bottom: 15px;
+        border: none;
+        border-radius: 5px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
       }
-    }
-    .accordion__button {
-      padding: 20px 25px;
-      background-color: #fff;
-      color: $black-color;
-      text-decoration: none;
-      position: relative;
-      display: block;
-      border-radius: 5px;
-      font: {
-        size: 17px;
-        weight: 800;
-      }
-      i {
-        position: absolute;
-        left: 25px;
-        top: 18px;
-        font-size: 25px;
-        transition: $transition;
-      }
-      &.active {
+      .accordion__button {
+        padding: 20px 25px;
+        background-color: #fff;
+        color: $black-color;
+        text-decoration: none;
+        position: relative;
+        display: block;
+        border-radius: 5px;
+        font: {
+          size: 17px;
+          weight: 800;
+        }
         i {
-          transform: rotate(180deg);
+          position: absolute;
+          left: 25px;
+          top: 18px;
+          font-size: 25px;
+          transition: $transition;
+        }
+        &.active {
+          i {
+            transform: rotate(180deg);
+          }
+        }
+      }
+      .accordion__panel {
+        position: relative;
+        margin-top: -5px;
+        padding-bottom: 20px;
+        padding-right: 30px;
+        padding-left: 48px;
+        padding-top: 15px;
+        p {
+          line-height: 1.8;
         }
       }
     }
-    .accordion__panel {
-      position: relative;
-      margin-top: -5px;
-      padding-bottom: 20px;
-      padding-right: 30px;
-      padding-left: 48px;
-      padding-top: 15px;
-      p {
-        line-height: 1.8;
-      }
-    }
-  }
+    ${media.lessThan('medium')`
+      height: 80rem;
+      margin-bottom: 5;
+      padding-top: 1rem;
+      font-size: ${theme.font.sizes.small}
+    `}
+  `}
 `
