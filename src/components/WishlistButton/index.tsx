@@ -29,8 +29,8 @@ const WishlistButton = ({
   }
 
   const ButtonText = isInWishlist(id)
-    ? 'Remove from Wishlist'
-    : 'Add to Wishlist'
+    ? 'Remover dos Favoritos'
+    : 'Adicionar os Favoritos'
 
   if (!session) return null
 
