@@ -8,7 +8,7 @@ let apolloClient: ApolloClient<NormalizedCacheObject | null>
 
 function createApolloClient(session?: Session | null) {
   const httpLink = new HttpLink({
-    uri: `https://start-app-7xgsq.ondigitalocean.app/graphql`
+    uri: `${process.env.NEXT_PUBLIC_API_URL}/graphql`
   })
 
   const authLink = setContext((_, { headers, session: clientSession }) => {
