@@ -1,6 +1,6 @@
 import Base from 'templates/Base'
 import { BannerProps } from 'components/Banner'
-import { GameCardProps } from 'components/GameCard'
+import { CourseCardProps } from 'components/CourseCard'
 import { HighlightProps } from 'components/Highlight'
 import { Container } from 'components/Container'
 import BannerSlider from 'components/BannerSlider'
@@ -20,24 +20,21 @@ import {
 
 export type HomeTemplateProps = {
   banners: BannerProps[]
-  mostPopularGamesTitle: string
+  mostPopularCoursesTitle: string
   mostPopularHighlight: HighlightProps
-  mostPopularGames: GameCardProps[]
-  upcomingGamesTitle: string
-  upcomingGames: GameCardProps[]
-  upcomingHighlight: HighlightProps
-  freeGamesTitle: string
-  freeGames: GameCardProps[]
+  mostPopularCourses: CourseCardProps[]
+  freeCoursesTitle: string
+  freeCourses: CourseCardProps[]
   freeHighlight: HighlightProps
 }
 
 const Home = ({
   banners,
-  mostPopularGamesTitle,
+  mostPopularCoursesTitle,
   mostPopularHighlight,
-  mostPopularGames,
-  freeGamesTitle,
-  freeGames
+  mostPopularCourses,
+  freeCoursesTitle,
+  freeCourses
 }: HomeTemplateProps) => (
   <Base>
     <S.Cover>
@@ -143,9 +140,9 @@ const Home = ({
     </S.SectionClients>
 
     <Showcase
-      title={mostPopularGamesTitle}
+      title={mostPopularCoursesTitle}
       highlight={mostPopularHighlight}
-      games={mostPopularGames}
+      courses={mostPopularCourses}
     />
 
     <S.SectionNumbers>
@@ -231,7 +228,7 @@ const Home = ({
       </S.NWrapper>
     </S.SectionNumbers>
 
-    <Showcase title={freeGamesTitle} games={freeGames} />
+    <Showcase title={freeCoursesTitle} courses={freeCourses} />
   </Base>
 )
 

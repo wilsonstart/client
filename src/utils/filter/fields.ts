@@ -20,7 +20,7 @@ export const typeCourseFields = [
 
 export const categoryFields = [
   { label: 'Administrativo', name: 'administrativo' },
-  { label: 'Bares, Hotéis e Restaurantes', name: 'bares-hoteis' },
+  { label: 'Bares, Hotéis e Restaurantes', name: 'bares-hoteis-restaurantes' },
   { label: 'Empreendedorismo', name: 'empreendedorismo' },
   { label: 'Gestão de Negócios', name: 'gestao-de-negocios' },
   { label: 'Gestão de Pessoas', name: 'gestao-de-pessoas' },

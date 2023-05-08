@@ -59,7 +59,9 @@ const CourseCard = ({
         {!!promotionalPrice && (
           <S.Price isPromotional>{formatPrice(price)}</S.Price>
         )}
-        <S.Price>{formatPrice(promotionalPrice || price)}</S.Price>
+        <S.Price>
+          {price === 0 ? 'FREE' : `${formatPrice(promotionalPrice || price)}`}
+        </S.Price>
         <CartButton id={id} />
       </S.BuyBox>
     </S.Content>

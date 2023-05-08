@@ -1,7 +1,7 @@
 import { QueryGames_games } from 'graphql/generated/QueryGames'
 import {
   QueryHome_banners,
-  QueryHome_sections_freeGames_highlight
+  QueryHome_sections_freeCourses_highlight
 } from 'graphql/generated/QueryHome'
 import { QueryWishlist_wishlists_games } from 'graphql/generated/QueryWishlist'
 
@@ -41,7 +41,7 @@ export const gamesMapper = (
 }
 
 export const highlightMapper = (
-  highlight: QueryHome_sections_freeGames_highlight | null | undefined
+  highlight: QueryHome_sections_freeCourses_highlight | null | undefined
 ) => {
   return highlight
     ? {

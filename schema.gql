@@ -917,25 +917,22 @@ type Home {
   id: ID!
   created_at: DateTime!
   updated_at: DateTime!
-  upcomingGames: ComponentPageSection
-  freeGames: ComponentPageSection
-  popularGames: ComponentPagePopularGames
+  freeCourses: ComponentPageSection
+  popularCourses: ComponentPagePopularGames
   published_at: DateTime
 }
 
 input HomeInput {
-  upcomingGames: ComponentPageSectionInput
-  freeGames: ComponentPageSectionInput
-  popularGames: ComponentPagePopularGameInput
+  freeCourses: ComponentPageSectionInput
+  popularCourses: ComponentPagePopularGameInput
   published_at: DateTime
   created_by: ID
   updated_by: ID
 }
 
 input editHomeInput {
-  upcomingGames: editComponentPageSectionInput
-  freeGames: editComponentPageSectionInput
-  popularGames: editComponentPagePopularGameInput
+  freeCourses: editComponentPageSectionInput
+  popularCourses: editComponentPagePopularGameInput
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -1411,6 +1408,7 @@ type Wishlist {
   updated_at: DateTime!
   user: UsersPermissionsUser
   games(sort: String, limit: Int, start: Int, where: JSON): [Game!]!
+  courses(sort: String, limit: Int, start: Int, where: JSON): [Course!]!
 }
 
 type WishlistConnection {
@@ -1454,6 +1452,7 @@ type WishlistConnectionUser {
 input WishlistInput {
   user: ID
   games: [ID]
+  courses: [ID]
   created_by: ID
   updated_by: ID
 }
@@ -1461,6 +1460,7 @@ input WishlistInput {
 input editWishlistInput {
   user: ID
   games: [ID]
+  courses: [ID]
   created_by: ID
   updated_by: ID
 }
@@ -2073,20 +2073,20 @@ type ComponentPagePopularGames {
   id: ID!
   title: String!
   highlight: ComponentPageHighlight
-  games(sort: String, limit: Int, start: Int, where: JSON): [Game!]!
+  courses(sort: String, limit: Int, start: Int, where: JSON): [Course!]!
 }
 
 input ComponentPagePopularGameInput {
   title: String!
   highlight: ComponentPageHighlightInput
-  games: [ID]
+  courses: [ID]
 }
 
 input editComponentPagePopularGameInput {
   id: ID
   title: String
   highlight: editComponentPageHighlightInput
-  games: [ID]
+  courses: [ID]
 }
 
 enum ENUM_COMPONENTPAGERIBBON_COLOR {

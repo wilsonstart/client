@@ -1,5 +1,6 @@
 import { gql, QueryHookOptions, useQuery } from '@apollo/client'
 import { GameFragment } from 'graphql/fragments/game'
+import { CourseFragment } from 'graphql/fragments/course'
 import {
   QueryWishlist,
   QueryWishlistVariables

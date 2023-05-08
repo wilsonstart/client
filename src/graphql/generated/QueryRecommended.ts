@@ -30,31 +30,32 @@ export interface QueryRecommended_recommended_section_highlight {
   alignment: ENUM_COMPONENTPAGEHIGHLIGHT_ALIGNMENT | null;
 }
 
-export interface QueryRecommended_recommended_section_games_cover {
+export interface QueryRecommended_recommended_section_courses_cover {
   __typename: "UploadFile";
   url: string;
 }
 
-export interface QueryRecommended_recommended_section_games_developers {
-  __typename: "Developer";
+export interface QueryRecommended_recommended_section_courses_instructor {
+  __typename: "Instructor";
   name: string;
 }
 
-export interface QueryRecommended_recommended_section_games {
-  __typename: "Game";
+export interface QueryRecommended_recommended_section_courses {
+  __typename: "Course";
   id: string;
   name: string;
-  slug: string;
-  cover: QueryRecommended_recommended_section_games_cover | null;
-  developers: QueryRecommended_recommended_section_games_developers[];
+  slug: string | null;
+  cover: QueryRecommended_recommended_section_courses_cover | null;
+  instructor: QueryRecommended_recommended_section_courses_instructor | null;
   price: number;
+  promotion_price: number | null;
 }
 
 export interface QueryRecommended_recommended_section {
   __typename: "ComponentPagePopularGames";
   title: string;
   highlight: QueryRecommended_recommended_section_highlight | null;
-  games: QueryRecommended_recommended_section_games[];
+  courses: QueryRecommended_recommended_section_courses[];
 }
 
 export interface QueryRecommended_recommended {

@@ -29,169 +29,118 @@ export interface QueryHome_banners_ribbon {
 
 export interface QueryHome_banners {
   __typename: "Banner";
-  image: QueryHome_banners_image | null;
+  image: QueryHome_banners_image;
   title: string;
   subtitle: string;
   button: QueryHome_banners_button | null;
   ribbon: QueryHome_banners_ribbon | null;
 }
 
-export interface QueryHome_upcomingGames_cover {
+export interface QueryHome_freeCourses_cover {
   __typename: "UploadFile";
   url: string;
 }
 
-export interface QueryHome_upcomingGames_developers {
-  __typename: "Developer";
+export interface QueryHome_freeCourses_instructor {
+  __typename: "Instructor";
   name: string;
 }
 
-export interface QueryHome_upcomingGames {
-  __typename: "Game";
+export interface QueryHome_freeCourses {
+  __typename: "Course";
   id: string;
   name: string;
   slug: string;
-  cover: QueryHome_upcomingGames_cover | null;
-  developers: QueryHome_upcomingGames_developers[];
+  cover: QueryHome_freeCourses_cover;
+  instructor: QueryHome_freeCourses_instructor;
   price: number;
+  promotion_price: number;
 }
 
-export interface QueryHome_freeGames_cover {
+export interface QueryHome_sections_popularCourses_highlight_background {
   __typename: "UploadFile";
   url: string;
 }
 
-export interface QueryHome_freeGames_developers {
-  __typename: "Developer";
-  name: string;
-}
-
-export interface QueryHome_freeGames {
-  __typename: "Game";
-  id: string;
-  name: string;
-  slug: string;
-  cover: QueryHome_freeGames_cover | null;
-  developers: QueryHome_freeGames_developers[];
-  price: number;
-}
-
-export interface QueryHome_sections_popularGames_highlight_background {
+export interface QueryHome_sections_popularCourses_highlight_floatImage {
   __typename: "UploadFile";
   url: string;
 }
 
-export interface QueryHome_sections_popularGames_highlight_floatImage {
-  __typename: "UploadFile";
-  url: string;
-}
-
-export interface QueryHome_sections_popularGames_highlight {
+export interface QueryHome_sections_popularCourses_highlight {
   __typename: "ComponentPageHighlight";
   title: string;
   subtitle: string;
-  background: QueryHome_sections_popularGames_highlight_background | null;
-  floatImage: QueryHome_sections_popularGames_highlight_floatImage | null;
+  background: QueryHome_sections_popularCourses_highlight_background | null;
+  floatImage: QueryHome_sections_popularCourses_highlight_floatImage | null;
   buttonLabel: string;
   buttonLink: string;
   alignment: ENUM_COMPONENTPAGEHIGHLIGHT_ALIGNMENT | null;
 }
 
-export interface QueryHome_sections_popularGames_games_cover {
+export interface QueryHome_sections_popularCourses_courses_cover {
   __typename: "UploadFile";
   url: string;
 }
 
-export interface QueryHome_sections_popularGames_games_developers {
-  __typename: "Developer";
+export interface QueryHome_sections_popularCourses_courses_instructor {
+  __typename: "Instructor";
   name: string;
 }
 
-export interface QueryHome_sections_popularGames_games {
-  __typename: "Game";
+export interface QueryHome_sections_popularCourses_courses {
+  __typename: "Course";
   id: string;
   name: string;
-  slug: string;
-  cover: QueryHome_sections_popularGames_games_cover | null;
-  developers: QueryHome_sections_popularGames_games_developers[];
+  slug: string | null;
+  cover: QueryHome_sections_popularCourses_courses_cover | null;
+  instructor: QueryHome_sections_popularCourses_courses_instructor | null;
   price: number;
+  promotion_price: number | null;
 }
 
-export interface QueryHome_sections_popularGames {
+export interface QueryHome_sections_popularCourses {
   __typename: "ComponentPagePopularGames";
   title: string;
-  highlight: QueryHome_sections_popularGames_highlight | null;
-  games: QueryHome_sections_popularGames_games[];
+  highlight: QueryHome_sections_popularCourses_highlight | null;
+  courses: QueryHome_sections_popularCourses_courses[];
 }
 
-export interface QueryHome_sections_upcomingGames_highlight_background {
+export interface QueryHome_sections_freeCourses_highlight_background {
   __typename: "UploadFile";
   url: string;
 }
 
-export interface QueryHome_sections_upcomingGames_highlight_floatImage {
+export interface QueryHome_sections_freeCourses_highlight_floatImage {
   __typename: "UploadFile";
   url: string;
 }
 
-export interface QueryHome_sections_upcomingGames_highlight {
+export interface QueryHome_sections_freeCourses_highlight {
   __typename: "ComponentPageHighlight";
   title: string;
   subtitle: string;
-  background: QueryHome_sections_upcomingGames_highlight_background | null;
-  floatImage: QueryHome_sections_upcomingGames_highlight_floatImage | null;
+  background: QueryHome_sections_freeCourses_highlight_background | null;
+  floatImage: QueryHome_sections_freeCourses_highlight_floatImage | null;
   buttonLabel: string;
   buttonLink: string;
   alignment: ENUM_COMPONENTPAGEHIGHLIGHT_ALIGNMENT | null;
 }
 
-export interface QueryHome_sections_upcomingGames {
+export interface QueryHome_sections_freeCourses {
   __typename: "ComponentPageSection";
   title: string | null;
-  highlight: QueryHome_sections_upcomingGames_highlight | null;
-}
-
-export interface QueryHome_sections_freeGames_highlight_background {
-  __typename: "UploadFile";
-  url: string;
-}
-
-export interface QueryHome_sections_freeGames_highlight_floatImage {
-  __typename: "UploadFile";
-  url: string;
-}
-
-export interface QueryHome_sections_freeGames_highlight {
-  __typename: "ComponentPageHighlight";
-  title: string;
-  subtitle: string;
-  background: QueryHome_sections_freeGames_highlight_background | null;
-  floatImage: QueryHome_sections_freeGames_highlight_floatImage | null;
-  buttonLabel: string;
-  buttonLink: string;
-  alignment: ENUM_COMPONENTPAGEHIGHLIGHT_ALIGNMENT | null;
-}
-
-export interface QueryHome_sections_freeGames {
-  __typename: "ComponentPageSection";
-  title: string | null;
-  highlight: QueryHome_sections_freeGames_highlight | null;
+  highlight: QueryHome_sections_freeCourses_highlight | null;
 }
 
 export interface QueryHome_sections {
   __typename: "Home";
-  popularGames: QueryHome_sections_popularGames | null;
-  upcomingGames: QueryHome_sections_upcomingGames | null;
-  freeGames: QueryHome_sections_freeGames | null;
+  popularCourses: QueryHome_sections_popularCourses | null;
+  freeCourses: QueryHome_sections_freeCourses | null;
 }
 
 export interface QueryHome {
   banners: QueryHome_banners[];
-  upcomingGames: QueryHome_upcomingGames[];
-  freeGames: QueryHome_freeGames[];
+  freeCourses: QueryHome_freeCourses[];
   sections: QueryHome_sections | null;
-}
-
-export interface QueryHomeVariables {
-  date: any;
 }

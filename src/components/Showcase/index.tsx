@@ -1,6 +1,6 @@
-import GameCardSlider from 'components/GameCardSlider'
+import CourseCardSlider from 'components/CourseCardSlider'
 import Heading from 'components/Heading'
-import { GameCardProps } from 'components/GameCard'
+import { CourseCardProps } from 'components/CourseCard'
 import Highlight, { HighlightProps } from 'components/Highlight'
 
 import * as S from './styles'
@@ -8,14 +8,14 @@ import * as S from './styles'
 export type ShowcaseProps = {
   title?: string
   highlight?: HighlightProps
-  games?: GameCardProps[]
+  courses?: CourseCardProps[]
   color?: 'black' | 'white'
 }
 
 const Showcase = ({
   title,
   highlight,
-  games,
+  courses,
   color = 'white'
 }: ShowcaseProps) => (
   <S.Wrapper data-cy={title || 'showcase'}>
@@ -25,7 +25,7 @@ const Showcase = ({
       </Heading>
     )}
     {!!highlight && <Highlight {...highlight} />}
-    {!!games && <GameCardSlider items={games} color={color} />}
+    {!!courses && <CourseCardSlider items={courses} color={color} />}
   </S.Wrapper>
 )
 

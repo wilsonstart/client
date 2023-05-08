@@ -1,8 +1,9 @@
 import Home, { HomeTemplateProps } from 'templates/Home'
 import { initializeApollo } from 'utils/apollo'
-import { QueryHome, QueryHomeVariables } from 'graphql/generated/QueryHome'
+import { QueryHome } from 'graphql/generated/QueryHome'
 import { QUERY_HOME } from 'graphql/queries/home'
-import { bannerMapper, gamesMapper, highlightMapper } from 'utils/mappers'
+import { bannerMapper, highlightMapper } from 'utils/mappers'
+import { getImageUrl } from 'utils/getImageUrl'
 
 export default function Index(props: HomeTemplateProps) {
   return <Home {...props} />
@@ -10,13 +11,11 @@ export default function Index(props: HomeTemplateProps) {
 
 export async function getStaticProps() {
   const apolloClient = initializeApollo()
-  const TODAY = new Date().toISOString().slice(0, 10) // 2021-01-27
 
   const {
-    data: { banners, freeGames, sections }
-  } = await apolloClient.query<QueryHome, QueryHomeVariables>({
+    data: { banners, freeCourses, sections }
+  } = await apolloClient.query<QueryHome>({
     query: QUERY_HOME,
-    variables: { date: TODAY },
     fetchPolicy: 'no-cache' // garantir sempre dado novo na geração do estático!
   })
 
@@ -24,12 +23,30 @@ export async function getStaticProps() {
     revalidate: 10,
     props: {
       banners: bannerMapper(banners),
-      mostPopularGamesTitle: sections?.popularGames?.title,
-      mostPopularHighlight: highlightMapper(sections?.popularGames?.highlight),
-      mostPopularGames: gamesMapper(sections!.popularGames!.games),
-      freeGamesTitle: sections?.freeGames?.title,
-      freeGames: gamesMapper(freeGames),
-      freeHighlight: highlightMapper(sections?.freeGames?.highlight)
+      mostPopularCoursesTitle: sections?.popularCourses?.title,
+      mostPopularHighlight: highlightMapper(
+        sections?.popularCourses?.highlight
+      ),
+      mostPopularCourses: sections?.popularCourses?.courses.map((course) => ({
+        id: course.id,
+        title: course.name,
+        slug: course.slug,
+        instructor: course.instructor?.name,
+        img: `${getImageUrl(course.cover?.url)}`,
+        price: course.price,
+        promotionPrice: course.promotion_price
+      })),
+      freeCoursesTitle: sections?.freeCourses?.title,
+      freeCourses: freeCourses.map((course) => ({
+        id: course.id,
+        title: course.name,
+        slug: course.slug,
+        instructor: course.instructor?.name,
+        img: `${getImageUrl(course.cover?.url)}`,
+        price: course.price,
+        promotionPrice: course.promotion_price
+      })),
+      freeHighlight: highlightMapper(sections?.freeCourses?.highlight)
     }
   }
 }

@@ -44,6 +44,7 @@ export interface UsersPermissionsRegisterInput {
 export interface WishlistInput {
   user?: string | null;
   games?: (string | null)[] | null;
+  courses?: (string | null)[] | null;
   created_by?: string | null;
   updated_by?: string | null;
 }
@@ -55,6 +56,7 @@ export interface createWishlistInput {
 export interface editWishlistInput {
   user?: string | null;
   games?: (string | null)[] | null;
+  courses?: (string | null)[] | null;
   created_by?: string | null;
   updated_by?: string | null;
 }
