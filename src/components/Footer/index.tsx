@@ -27,18 +27,13 @@ const Footer = () => (
           Contate-nos
         </Heading>
         <p>
-          <LocationOn size={24} /> Rua Sacadura Cabral, 379
-          <p>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rio de Janeiro CEP
-            23455-000
-          </p>
+          Rua Sacadura Cabral, 379
+          <p>Rio de Janeiro CEP 23455-000</p>
         </p>
-        <p>
-          <Phone size={20} /> (21) 3234-3234
-        </p>
+        <p>(21) 3234-3234</p>
 
         <a href="mailto:sac@portalescolastart.com">
-          <Email size={20} /> sac@portalescolastart.com
+          contato@portalescolastart.com
         </a>
         <ul>
           <li>

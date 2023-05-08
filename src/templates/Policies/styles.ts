@@ -18,7 +18,7 @@ export const Cover = styled.div`
   }
 
   ${media.greaterThan('medium')`
-    height: 30rem;
+    height: 35rem;
   `}
 `
 
@@ -59,12 +59,20 @@ export const Heading = styled(Container)`
     text-align: center;
 
     ${media.greaterThan('large')`
-      margin-top: -18rem;
+      margin-top: -1rem;
+      padding-top: 10rem;
     `}
 
     ${media.greaterThan('medium')`
-      margin-bottom: 0;
-      padding-top: 14rem;
+      margin-bottom: 2rem;
+      padding-top: 1rem;
+    `}
+
+    ${media.lessThan('medium')`
+      margin-bottom: 5;
+      padding-top: 1rem;
+      padding-bottom: 1.5rem;
+      font-size: ${theme.font.sizes.xxlarge};
     `}
   `}
 `
@@ -78,8 +86,13 @@ export const Text = styled.p`
     }
   `}
 
+  ${media.greaterThan('large')`
+      margin-bottom: 2rem;
+    `}
+
   ${media.lessThan('medium')`
       margin-bottom: 2rem;
       padding-top: 1rem;
+      padding-bottom: 2rem;
     `}
 `
