@@ -45,15 +45,16 @@ export const SectionBeneficts = styled.div`
 
     ${media.greaterThan('large')`
       margin-top: -13rem;
+      padding-top: 5rem;
+      clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 85%);
     `}
 
     ${media.greaterThan('medium')`
       margin-bottom: 0;
-      padding-top: 14rem;
+      padding-top: 15rem;
       padding-bottom: 10rem;
       height: 75rem;
       background-color: ${theme.colors.lightBg};
-      clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 85%);
     `}
 
     ${media.lessThan('medium')`
@@ -174,6 +175,11 @@ export const FContent = styled.div`
   background-color: #f9f9f9;
   transition: $transition;
   border-bottom: 2px solid #eee;
+
+  ${media.lessThan('medium')`
+    padding: 20px 30px;
+    margin-bottom: 20px;
+  `}
 `
 
 export const FTitle = styled.h1`
@@ -239,11 +245,10 @@ export const SectionClients = styled.div`
     `}
 
     ${media.lessThan('medium')`
-      display: none;
-      /* height: 125rem;
+      height: 135rem;
       padding-left: 1rem;
       padding-right: 1rem;
-      background-color: ${theme.colors.mainBg}; */
+      background-color: ${theme.colors.mainBg};
     `}
   `}
 `
@@ -327,13 +332,13 @@ export const SectionNumbers = styled.div`
       margin-bottom: 5rem;
       padding-top: 2rem;
       padding-bottom: 10rem;
-      height: 60rem;
+      height: 65rem;
       background-color: ${theme.colors.lightBg};
     `}
 
     ${media.lessThan('medium')`
       margin-bottom: 5rem;
-      height: 130rem;
+      height: 135rem;
       padding-left: 1rem;
       padding-right: 1rem;
       background-color: ${theme.colors.lightBg};
@@ -410,10 +415,13 @@ export const NSingleBox = styled.div`
   `}
 
   ${media.lessThan('medium')`
+    ${({ theme }) => css`
       margin-bottom: 1rem;
       svg {
         width: 3.5rem;
       }
+      background-color: ${theme.colors.white};
+    `}
     `}
 `
 
