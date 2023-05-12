@@ -32,9 +32,7 @@ const Footer = () => (
         </p>
         <p>(21) 3234-3234</p>
 
-        <a href="mailto:sac@portalescolastart.com">
-          contato@portalescolastart.com
-        </a>
+        <a href="mailto:sac@portalescolastart.com">saa@escolastart.plus</a>
         <ul>
           <li>
             <a

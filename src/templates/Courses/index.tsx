@@ -47,7 +47,7 @@ const CoursesTemplate = ({ filterItems }: CoursesTemplateProps) => {
   }
 
   const handleShowMore = () => {
-    fetchMore({ variables: { limit: 12, start: data?.courses.length } })
+    fetchMore({ variables: { limit: 12, start: data.courses.length } })
   }
 
   return (

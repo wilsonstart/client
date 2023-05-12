@@ -5,12 +5,12 @@ export default new InMemoryCache({
   typePolicies: {
     Query: {
       fields: {
-        games: concatPagination(['where', 'sort'])
+        courses: concatPagination(['where', 'sort'])
       }
     },
     Wishlist: {
       fields: {
-        games: {
+        courses: {
           merge(_, incoming) {
             return incoming
           }
