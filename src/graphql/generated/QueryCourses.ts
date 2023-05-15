@@ -44,7 +44,7 @@ export interface QueryCourses {
 }
 
 export interface QueryCoursesVariables {
-  limit: number;
+  limit?: number;
   start?: number | null;
   where?: any | null;
   sort?: string | null;
