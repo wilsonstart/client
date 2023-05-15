@@ -125,16 +125,16 @@ const Home = ({
           <Image src="/clients/min_defesa.png" width={80} height={95} />
         </S.CImagesCard>
         <S.CImagesCard>
-          <Image src="/clients/fieb.png" width={200} height={89} />
+          <Image src="/clients/fieb.png" width={150} height={59} />
         </S.CImagesCard>
         <S.CImagesCard>
-          <Image src="/clients/sesc.png" width={140} height={60} />
+          <Image src="/clients/sesc.png" width={100} height={40} />
         </S.CImagesCard>
         <S.CImagesCard>
-          <Image src="/clients/scgas.png" width={220} height={60} />
+          <Image src="/clients/scgas.png" width={170} height={45} />
         </S.CImagesCard>
         <S.CImagesCard>
-          <Image src="/clients/gov_sp.png" width={180} height={95} />
+          <Image src="/clients/gov_sp.png" width={160} height={85} />
         </S.CImagesCard>
       </S.CImages>
     </S.SectionClients>

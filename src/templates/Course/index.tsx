@@ -33,7 +33,7 @@ const Course = ({
 }: CourseTemplateProps) => (
   <Base>
     <NextSeo
-      title={`${courseInfo.title} - Escola START`}
+      title={`${courseInfo.title} - Escola START Plus`}
       description={courseInfo.description}
       canonical={`https://www.portalescolastart.com/courses/${slug}`}
       openGraph={{

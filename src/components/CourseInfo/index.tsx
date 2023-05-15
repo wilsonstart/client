@@ -11,15 +11,28 @@ export type CourseInfoProps = {
   title: string
   description: string
   price: number
+  promotionalPrice?: number
 }
 
-const CourseInfo = ({ id, title, description, price }: CourseInfoProps) => (
+const CourseInfo = ({
+  id,
+  title,
+  description,
+  price,
+  promotionalPrice
+}: CourseInfoProps) => (
   <S.Wrapper data-cy="game-info">
     <Heading color="black" lineBottom>
       {title}
     </Heading>
 
-    <Ribbon color="secondary">{formatPrice(price)}</Ribbon>
+    {promotionalPrice ? (
+      <Ribbon color="secondary">{formatPrice(promotionalPrice)}</Ribbon>
+    ) : (
+      <Ribbon color="secondary">
+        {price === 0 ? 'FREE' : `${formatPrice(promotionalPrice || price)}`}
+      </Ribbon>
+    )}
 
     <S.Description>{description}</S.Description>
 

@@ -16,9 +16,9 @@ const Logo = ({
 }: LogoProps) => (
   <S.Wrapper hideOnMobile={hideOnMobile}>
     <Image
-      src="/img/logo-start-white.png"
-      width={150}
-      height={44}
+      src="/img/logo-start-white-02.png"
+      width={130}
+      height={50}
       alt="Logo START"
     />
   </S.Wrapper>

@@ -31,8 +31,8 @@ const Auth = ({ title, children }: AuthProps) => (
         <div>
           <Heading size="huge">Os melhores cursos num só lugar</Heading>
           <S.Subtitle>
-            <strong>Escola START</strong> é a melhor plataforma de cursos de
-            formação profissional.
+            <strong>Escola START Plus</strong> é a melhor plataforma de cursos
+            de formação profissional.
           </S.Subtitle>
         </div>
 

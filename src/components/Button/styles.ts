@@ -56,7 +56,7 @@ const wrapperModifiers = {
 
     &:hover {
       color: ${theme.colors.white};
-      background: linear-gradient(180deg, #e35565 0%, #d958a6 50%);
+      background: linear-gradient(180deg, #3cb371 0%, #32cd32 50%); // #e35565
     }
   `
 }
@@ -66,7 +66,7 @@ export const Wrapper = styled.button<WrapperProps>`
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(180deg, #ff5f5f 0%, #f062c0 50%); //
+    background: linear-gradient(180deg, #3cb371 0%, #32cd32 50%); // #ff5f5f
     color: ${theme.colors.white};
     font-family: ${theme.font.family};
     border: 0;
@@ -82,7 +82,7 @@ export const Wrapper = styled.button<WrapperProps>`
     &:hover {
       background: ${minimal
         ? 'none'
-        : `linear-gradient(180deg, #e35565 0%, #d958a6 50%)`};
+        : `linear-gradient(180deg, #90EE90 0%, #32cd32 50%)`};
     }
 
     ${!!size && wrapperModifiers[size](theme)};

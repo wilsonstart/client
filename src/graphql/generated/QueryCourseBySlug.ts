@@ -56,11 +56,11 @@ export interface QueryCourseBySlug_courses {
   __typename: "Course";
   id: string;
   name: string;
-  slug: string | null;
+  slug: string;
   short_description: string;
   description: string;
   price: number;
-  promotion_price: number | null;
+  promotion_price: number;
   duration: string;
   lesson: number;
   cover: QueryCourseBySlug_courses_cover | null;

@@ -16,9 +16,9 @@ const currentYear = new Date().getFullYear()
 const Footer = () => (
   <S.Wrapper>
     <Image
-      src="/img/logo-start-dark.jpeg"
-      width={150}
-      height={44}
+      src="/img/logo-start-dark-02.png"
+      width={130}
+      height={50}
       alt="Logo START"
     />
     <S.Content>

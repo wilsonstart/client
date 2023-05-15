@@ -3,7 +3,6 @@ import {
   QueryHome_banners,
   QueryHome_sections_freeCourses_highlight
 } from 'graphql/generated/QueryHome'
-import { QueryWishlist_wishlists_courses } from 'graphql/generated/QueryWishlist'
 
 import { QueryOrders_orders } from 'graphql/generated/QueryOrders'
 
@@ -47,7 +46,8 @@ export const cartMapper = (courses: QueryCourses_courses[] | undefined) => {
         id: course.id,
         img: `${getImageUrl(course.cover?.url)}`,
         title: course.name,
-        price: formatPrice(course.price)
+        price: formatPrice(course.price),
+        promotionalPrice: formatPrice(course.promotion_price)
       }))
     : []
 }

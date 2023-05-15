@@ -53,7 +53,7 @@ export const SectionNews = styled(Container)`
 
 export const Heading = styled(Container)`
   ${({ theme }) => css`
-    font-size: ${theme.font.sizes.huge};
+    font-size: 3.5rem;
     color: ${theme.colors.primary};
     font-weight: ${theme.font.bold};
     text-align: center;
