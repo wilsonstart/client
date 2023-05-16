@@ -46,8 +46,7 @@ export const cartMapper = (courses: QueryCourses_courses[] | undefined) => {
         id: course.id,
         img: `${getImageUrl(course.cover?.url)}`,
         title: course.name,
-        price: formatPrice(course.price),
-        promotionalPrice: formatPrice(course.promotion_price)
+        price: formatPrice(course.price)
       }))
     : []
 }
@@ -75,8 +74,7 @@ export const ordersMapper = (orders: QueryOrders_orders[] | undefined) => {
             downloadLink:
               'https://wongames.com/game/download/yuYT56Tgh431LkjhNBgdf',
             img: `${getImageUrl(course.cover?.url)}`,
-            price: formatPrice(course.price),
-            promotionalPrice: formatPrice(course.promotion_price)
+            price: formatPrice(course.price)
           }))
         }
       })
