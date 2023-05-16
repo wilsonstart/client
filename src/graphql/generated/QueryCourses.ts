@@ -22,10 +22,9 @@ export interface QueryCourses_courses {
   id: string;
   name: string;
   slug: string;
-  cover: QueryCourses_courses_cover ;
-  instructor: QueryCourses_courses_instructor ;
+  cover: QueryCourses_courses_cover | null;
+  instructor: QueryCourses_courses_instructor;
   price: number;
-  promotion_price: number;
 }
 
 export interface QueryCourses_coursesConnection_values {
@@ -44,7 +43,7 @@ export interface QueryCourses {
 }
 
 export interface QueryCoursesVariables {
-  limit?: number;
+  limit?: number | null;
   start?: number | null;
   where?: any | null;
   sort?: string | null;

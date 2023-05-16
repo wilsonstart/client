@@ -33,8 +33,7 @@ export async function getStaticProps() {
         slug: course.slug,
         instructor: course.instructor?.name,
         img: `${getImageUrl(course.cover?.url)}`,
-        price: course.price,
-        promotionPrice: course.promotion_price
+        price: course.price
       })),
       freeCoursesTitle: sections?.freeCourses?.title,
       freeCourses: freeCourses.map((course) => ({
@@ -43,8 +42,7 @@ export async function getStaticProps() {
         slug: course.slug,
         instructor: course.instructor?.name,
         img: `${getImageUrl(course.cover?.url)}`,
-        price: course.price,
-        promotionPrice: course.promotion_price
+        price: course.price
       })),
       freeHighlight: highlightMapper(sections?.freeCourses?.highlight)
     }

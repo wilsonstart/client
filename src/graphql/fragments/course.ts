@@ -12,6 +12,5 @@ export const CourseFragment = gql`
       name
     }
     price
-    promotion_price
   }
 `

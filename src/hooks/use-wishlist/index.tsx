@@ -114,8 +114,7 @@ const WishlistProvider = ({ children }: WishlistProviderProps) => {
             name: ''
           }
         ],
-        price: '',
-        promotion_price: ''
+        price: ''
       }
     )
   }
@@ -211,8 +210,7 @@ const WishlistProvider = ({ children }: WishlistProviderProps) => {
           slug: course.slug,
           instructor: course.instructor?.name,
           img: `${getImageUrl(course.cover?.url)}`,
-          price: course.price,
-          promotionPrice: course.promotion_price
+          price: course.price
         })),
         isInWishlist,
         addToWishlist,

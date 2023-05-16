@@ -29,7 +29,6 @@ export const QUERY_COURSE_BY_SLUG = gql`
       short_description
       description
       price
-      promotion_price
       duration
       lesson
       cover {

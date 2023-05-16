@@ -79,7 +79,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         id: course.id,
         title: course.name,
         price: course.price,
-        promotionalPrice: course.promotion_price,
         description: course.short_description
       },
       description: course.description,
@@ -99,8 +98,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
           slug: course.slug,
           instructor: course.instructor?.name,
           img: `${getImageUrl(course.cover?.url)}`,
-          price: course.price,
-          promotionalPrice: course.promotion_price
+          price: course.price
         })
       )
     }

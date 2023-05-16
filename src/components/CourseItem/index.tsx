@@ -26,7 +26,6 @@ const CourseItem = ({
   img,
   title,
   price,
-  promotionalPrice,
   downloadLink,
   paymentInfo
 }: CourseItemProps) => {
@@ -53,11 +52,7 @@ const CourseItem = ({
             )}
           </S.Title>
           <S.Group>
-            {promotionalPrice ? (
-              <S.Price>{promotionalPrice}</S.Price>
-            ) : (
-              <S.Price>{price}</S.Price>
-            )}
+            <S.Price>{price}</S.Price>
 
             {isInCart(id) && (
               <S.Remove onClick={() => removeFromCart(id)}>Remover</S.Remove>

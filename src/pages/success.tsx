@@ -27,8 +27,7 @@ export async function getStaticProps() {
         slug: course.slug,
         instructor: course.instructor?.name,
         img: `${getImageUrl(course.cover?.url)}`,
-        price: course.price,
-        promotionPrice: course.promotion_price
+        price: course.price
       })),
       recommendedHighlight: highlightMapper(
         data.recommended?.section?.highlight

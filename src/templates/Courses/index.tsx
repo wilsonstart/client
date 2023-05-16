@@ -75,7 +75,6 @@ const CoursesTemplate = ({ filterItems }: CoursesTemplateProps) => {
                     instructor={course.instructor?.name}
                     img={`${getImageUrl(course.cover!.url)}`}
                     price={course.price}
-                    promotionalPrice={course.promotion_price}
                   />
                 ))}
               </Grid>

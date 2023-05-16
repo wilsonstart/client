@@ -23,11 +23,10 @@ export interface MutationCreateWishlist_createWishlist_wishlist_courses {
   __typename: "Course";
   id: string;
   name: string;
-  slug: string | null;
+  slug: string;
   cover: MutationCreateWishlist_createWishlist_wishlist_courses_cover | null;
   instructor: MutationCreateWishlist_createWishlist_wishlist_courses_instructor | null;
   price: number;
-  promotion_price: number | null;
 }
 
 export interface MutationCreateWishlist_createWishlist_wishlist {

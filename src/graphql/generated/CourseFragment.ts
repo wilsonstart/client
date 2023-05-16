@@ -21,9 +21,8 @@ export interface CourseFragment {
   __typename: "Course";
   id: string;
   name: string;
-  slug: string | null;
+  slug: string;
   cover: CourseFragment_cover | null;
   instructor: CourseFragment_instructor | null;
   price: number;
-  promotion_price: number | null;
 }

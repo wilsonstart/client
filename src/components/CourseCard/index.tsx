@@ -16,7 +16,6 @@ export type CourseCardProps = {
   instructor: string
   img: string
   price: number
-  promotionalPrice?: number
   ribbon?: React.ReactNode
   ribbonColor?: RibbonColors
   ribbonSize?: RibbonSizes
@@ -29,7 +28,6 @@ const CourseCard = ({
   instructor,
   img,
   price,
-  promotionalPrice,
   ribbon,
   ribbonColor = 'primary',
   ribbonSize = 'small'
@@ -56,12 +54,7 @@ const CourseCard = ({
         <WishlistButton id={id} />
       </S.FavButton>
       <S.BuyBox>
-        {!!promotionalPrice && (
-          <S.Price isPromotional>{formatPrice(price)}</S.Price>
-        )}
-        <S.Price>
-          {price === 0 ? 'FREE' : `${formatPrice(promotionalPrice || price)}`}
-        </S.Price>
+        <S.Price>{price === 0 ? 'FREE' : `${formatPrice(price)}`}</S.Price>
         <CartButton id={id} />
       </S.BuyBox>
     </S.Content>

@@ -21,11 +21,10 @@ export interface QueryOrders_orders_courses {
   __typename: "Course";
   id: string;
   name: string;
-  slug: string | null;
+  slug: string;
   cover: QueryOrders_orders_courses_cover | null;
   instructor: QueryOrders_orders_courses_instructor | null;
   price: number;
-  promotion_price: number | null;
 }
 
 export interface QueryOrders_orders {

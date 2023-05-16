@@ -44,11 +44,10 @@ export interface QueryRecommended_recommended_section_courses {
   __typename: "Course";
   id: string;
   name: string;
-  slug: string | null;
+  slug: string;
   cover: QueryRecommended_recommended_section_courses_cover | null;
   instructor: QueryRecommended_recommended_section_courses_instructor | null;
   price: number;
-  promotion_price: number | null;
 }
 
 export interface QueryRecommended_recommended_section {

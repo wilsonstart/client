@@ -22,10 +22,9 @@ export interface QueryWishlist_wishlists_courses {
   id: string;
   name: string;
   slug: string;
-  cover: QueryWishlist_wishlists_courses_cover;
+  cover: QueryWishlist_wishlists_courses_cover | null;
   instructor: QueryWishlist_wishlists_courses_instructor;
   price: number;
-  promotion_price: number;
 }
 
 export interface QueryWishlist_wishlists {

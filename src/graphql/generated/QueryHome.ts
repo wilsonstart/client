@@ -54,7 +54,6 @@ export interface QueryHome_freeCourses {
   cover: QueryHome_freeCourses_cover | null;
   instructor: QueryHome_freeCourses_instructor | null;
   price: number;
-  promotion_price: number | null;
 }
 
 export interface QueryHome_sections_popularCourses_highlight_background {
@@ -96,7 +95,6 @@ export interface QueryHome_sections_popularCourses_courses {
   cover: QueryHome_sections_popularCourses_courses_cover | null;
   instructor: QueryHome_sections_popularCourses_courses_instructor | null;
   price: number;
-  promotion_price: number | null;
 }
 
 export interface QueryHome_sections_popularCourses {

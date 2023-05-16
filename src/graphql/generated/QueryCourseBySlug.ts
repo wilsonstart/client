@@ -60,7 +60,6 @@ export interface QueryCourseBySlug_courses {
   short_description: string;
   description: string;
   price: number;
-  promotion_price: number;
   duration: string;
   lesson: number;
   cover: QueryCourseBySlug_courses_cover | null;
