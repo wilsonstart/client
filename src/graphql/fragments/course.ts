@@ -11,6 +11,9 @@ export const CourseFragment = gql`
     instructor {
       name
     }
+    category {
+      name
+    }
     price
   }
 `

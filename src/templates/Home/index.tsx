@@ -213,15 +213,11 @@ const Home = ({
 
           <S.CredBox>
             <S.CredSingleBox>
-              <Image src="/cred/crn.png" width={150} height={70} />
+              <Image src="/cred/crc.png" width={120} height={100} />
             </S.CredSingleBox>
 
             <S.CredSingleBox>
-              <Image src="/cred/crc.png" width={120} height={110} />
-            </S.CredSingleBox>
-
-            <S.CredSingleBox>
-              <Image src="/cred/abed.png" width={150} height={60} />
+              <Image src="/cred/abed.png" width={130} height={60} />
             </S.CredSingleBox>
           </S.CredBox>
         </S.NContent>

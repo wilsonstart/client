@@ -46,6 +46,11 @@ export interface QueryHome_freeCourses_instructor {
   name: string;
 }
 
+export interface QueryHome_freeCourses_category {
+  __typename: "Category";
+  name: string;
+}
+
 export interface QueryHome_freeCourses {
   __typename: "Course";
   id: string;
@@ -53,6 +58,7 @@ export interface QueryHome_freeCourses {
   slug: string | null;
   cover: QueryHome_freeCourses_cover | null;
   instructor: QueryHome_freeCourses_instructor | null;
+  category: QueryHome_freeCourses_category | null;
   price: number;
 }
 
@@ -87,6 +93,11 @@ export interface QueryHome_sections_popularCourses_courses_instructor {
   name: string;
 }
 
+export interface QueryHome_sections_popularCourses_courses_category {
+  __typename: "Category";
+  name: string;
+}
+
 export interface QueryHome_sections_popularCourses_courses {
   __typename: "Course";
   id: string;
@@ -94,6 +105,7 @@ export interface QueryHome_sections_popularCourses_courses {
   slug: string | null;
   cover: QueryHome_sections_popularCourses_courses_cover | null;
   instructor: QueryHome_sections_popularCourses_courses_instructor | null;
+  category: QueryHome_sections_popularCourses_courses_category | null;
   price: number;
 }
 

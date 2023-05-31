@@ -100,3 +100,10 @@ export const ContentWrapper = styled.div`
     }
   `}
 `
+
+export const Logo = styled.div`
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+`

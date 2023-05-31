@@ -3,7 +3,6 @@ import Link from 'next/link'
 import Heading from 'components/Heading'
 import * as S from './styles'
 import Image from 'next/image'
-import { Email, LocationOn, Phone } from '@styled-icons/material-outlined'
 import {
   FacebookCircle,
   Instagram,
@@ -79,7 +78,7 @@ const Footer = () => (
         </Heading>
 
         <nav id="institutional">
-          <Link href="/about-us">Sobre a START</Link>
+          <Link href="/about-us">Sobre a Escola START</Link>
           <Link href="/about-us#our-time">Nosso Time</Link>
         </nav>
       </S.Column>

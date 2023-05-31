@@ -72,7 +72,7 @@ const CoursesTemplate = ({ filterItems }: CoursesTemplateProps) => {
                     key={course.slug}
                     title={course.name}
                     slug={course.slug}
-                    instructor={course.instructor?.name}
+                    category={course.category.name}
                     img={`${getImageUrl(course.cover!.url)}`}
                     price={course.price}
                   />

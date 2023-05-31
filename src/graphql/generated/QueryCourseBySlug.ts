@@ -56,7 +56,7 @@ export interface QueryCourseBySlug_courses {
   __typename: "Course";
   id: string;
   name: string;
-  slug: string;
+  slug: string | null;
   short_description: string;
   description: string;
   price: number;

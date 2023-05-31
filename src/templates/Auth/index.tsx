@@ -44,6 +44,12 @@ const Auth = ({ title, children }: AuthProps) => (
 
     <S.Content>
       <S.ContentWrapper>
+        <S.Logo>
+          <a href="/">
+            <Image src="/img/logo-start-dark-02.png" width={130} height={50} />
+          </a>
+        </S.Logo>
+
         <Heading color="black" lineColor="secondary" lineLeft>
           {title}
         </Heading>

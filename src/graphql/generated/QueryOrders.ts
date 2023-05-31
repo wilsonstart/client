@@ -17,13 +17,19 @@ export interface QueryOrders_orders_courses_instructor {
   name: string;
 }
 
+export interface QueryOrders_orders_courses_category {
+  __typename: "Category";
+  name: string;
+}
+
 export interface QueryOrders_orders_courses {
   __typename: "Course";
   id: string;
   name: string;
-  slug: string;
+  slug: string | null;
   cover: QueryOrders_orders_courses_cover | null;
   instructor: QueryOrders_orders_courses_instructor | null;
+  category: QueryOrders_orders_courses_category | null;
   price: number;
 }
 

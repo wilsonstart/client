@@ -17,13 +17,19 @@ export interface QueryCourses_courses_instructor {
   name: string;
 }
 
+export interface QueryCourses_courses_category {
+  __typename: "Category";
+  name: string;
+}
+
 export interface QueryCourses_courses {
   __typename: "Course";
   id: string;
   name: string;
   slug: string;
   cover: QueryCourses_courses_cover | null;
-  instructor: QueryCourses_courses_instructor;
+  instructor: QueryCourses_courses_instructor | null;
+  category: QueryCourses_courses_category;
   price: number;
 }
 

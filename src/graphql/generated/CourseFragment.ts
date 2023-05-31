@@ -17,12 +17,18 @@ export interface CourseFragment_instructor {
   name: string;
 }
 
+export interface CourseFragment_category {
+  __typename: "Category";
+  name: string;
+}
+
 export interface CourseFragment {
   __typename: "Course";
   id: string;
   name: string;
-  slug: string;
+  slug: string | null;
   cover: CourseFragment_cover | null;
   instructor: CourseFragment_instructor | null;
+  category: CourseFragment_category | null;
   price: number;
 }

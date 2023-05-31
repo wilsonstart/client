@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { Download } from '@styled-icons/boxicons-solid/Download'
 import { useCart } from 'hooks/use-cart'
 
 import * as S from './styles'
@@ -17,7 +16,6 @@ export type CourseItemProps = {
   title: string
   price: string
   promotionalPrice?: string
-  downloadLink?: string
   paymentInfo?: PaymentInfoProps
 }
 
@@ -26,7 +24,6 @@ const CourseItem = ({
   img,
   title,
   price,
-  downloadLink,
   paymentInfo
 }: CourseItemProps) => {
   const { isInCart, removeFromCart } = useCart()
@@ -39,18 +36,7 @@ const CourseItem = ({
         </S.ImageBox>
 
         <S.Content>
-          <S.Title>
-            {title}
-            {!!downloadLink && (
-              <S.DownloadLink
-                href={downloadLink}
-                target="_blank"
-                aria-label={`Pegue ${title} aqui`}
-              >
-                <Download size={22} />
-              </S.DownloadLink>
-            )}
-          </S.Title>
+          <S.Title>{title}</S.Title>
           <S.Group>
             <S.Price>{price}</S.Price>
 

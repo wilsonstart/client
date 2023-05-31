@@ -17,13 +17,19 @@ export interface QueryWishlist_wishlists_courses_instructor {
   name: string;
 }
 
+export interface QueryWishlist_wishlists_courses_category {
+  __typename: "Category";
+  name: string;
+}
+
 export interface QueryWishlist_wishlists_courses {
   __typename: "Course";
   id: string;
   name: string;
-  slug: string;
+  slug: string | null;
   cover: QueryWishlist_wishlists_courses_cover | null;
-  instructor: QueryWishlist_wishlists_courses_instructor;
+  instructor: QueryWishlist_wishlists_courses_instructor | null;
+  category: QueryWishlist_wishlists_courses_category | null;
   price: number;
 }
 

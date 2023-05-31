@@ -1,16 +1,16 @@
 import { Story, Meta } from '@storybook/react/types-6-0'
-import OrdersList, { OrdersListProps } from '.'
+import CoursesList, { CoursesListProps } from '.'
 
 export default {
-  title: 'Profile/OrdersList',
-  component: OrdersList,
+  title: 'Profile/CoursesList',
+  component: CoursesList,
   args: {
     items: []
   }
-} as Meta<OrdersListProps>
+} as Meta<CoursesListProps>
 
-export const Default: Story<OrdersListProps> = (args) => (
+export const Default: Story<CoursesListProps> = (args) => (
   <div style={{ maxWidth: 850, margin: 'auto' }}>
-    <OrdersList {...args} />
+    <CoursesList {...args} />
   </div>
 )

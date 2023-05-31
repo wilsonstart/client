@@ -19,13 +19,19 @@ export interface MutationCreateWishlist_createWishlist_wishlist_courses_instruct
   name: string;
 }
 
+export interface MutationCreateWishlist_createWishlist_wishlist_courses_category {
+  __typename: "Category";
+  name: string;
+}
+
 export interface MutationCreateWishlist_createWishlist_wishlist_courses {
   __typename: "Course";
   id: string;
   name: string;
-  slug: string;
+  slug: string | null;
   cover: MutationCreateWishlist_createWishlist_wishlist_courses_cover | null;
   instructor: MutationCreateWishlist_createWishlist_wishlist_courses_instructor | null;
+  category: MutationCreateWishlist_createWishlist_wishlist_courses_category | null;
   price: number;
 }
 

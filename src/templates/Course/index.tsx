@@ -62,7 +62,8 @@ const Course = ({
       </S.SectionGameDetails>
 
       <S.SectionDescription>
-        <TextContent title="Descrição" content={description} />
+        {/* <TextContent title="Descrição" content={description} /> */}
+        <TextContent content={description} />
         <Divider />
       </S.SectionDescription>
 

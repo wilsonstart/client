@@ -1,67 +1,37 @@
 import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 
-import * as HeadingStyles from 'components/Heading/styles'
 import { Container } from 'components/Container'
 
-export const SectionBanner = styled.section`
-  ${({ theme }) => css`
-    margin: 0 calc(-${theme.grid.gutter} / 2) ${theme.spacings.large};
-
-    ${media.greaterThan('medium')`
-      margin-bottom: ${theme.spacings.large};
-      position: relative;
-      z-index: ${theme.layers.base};
-    `}
-  `}
+export const Wrapper = styled.div`
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
 `
 
-export const SectionNews = styled.div`
-  ${({ theme }) => css`
-    margin-bottom: calc(${theme.spacings.xxlarge} * 2);
-
-    ${media.greaterThan('large')`
-      margin-top: -13rem;
-    `}
-
-    ${media.greaterThan('medium')`
-      margin-bottom: 0;
-      padding-top: 14rem;
-      padding-bottom: 10rem;
-      background-color: ${theme.colors.lightBg};
-      clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 85%);
-
-      ${HeadingStyles.Wrapper} {
-        color: ${theme.colors.black};
-      }
-    `}
-  `}
+export const LogoWrapper = styled.div`
+  margin-top: 2rem;
+  margin-left: 5rem;
+  display: inline-block;
 `
 
-export const SectionBeneficts = styled.div`
+export const TextUp = styled.div`
   ${({ theme }) => css`
-    margin-bottom: calc(${theme.spacings.xxlarge} * 2);
-    background-color: ${theme.colors.lightBg};
-
-    ${media.greaterThan('large')`
-      margin-top: -13rem;
-      padding-top: 5rem;
-      clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 85%);
-    `}
-
-    ${media.greaterThan('medium')`
-      margin-bottom: 0;
-      padding-top: 15rem;
-      padding-bottom: 10rem;
-      height: 75rem;
-      background-color: ${theme.colors.lightBg};
-    `}
+    display: inline-block;
+    margin-top: 2rem;
+    color: white;
+    float: right;
+    text-align: center;
+    font-weight: ${theme.font.bold};
 
     ${media.lessThan('medium')`
-      height: 95rem;
-      padding-left: 1rem;
-      padding-right: 1rem;
-      background-color: ${theme.colors.lightBg};
+      font-size: ${theme.font.sizes.small}
+    `}
+
+    ${media.greaterThan('medium')`
+      font-size: ${theme.font.sizes.xxlarge};
     `}
   `}
 `
@@ -96,6 +66,7 @@ export const Title = styled.h1`
 
 export const SubTitle = styled.h3`
   ${({ theme }) => css`
+    margin-top: 5rem;
     text-transform: uppercase;
     color: ${theme.colors.secondary};
     margin-bottom: 10px;
@@ -158,82 +129,13 @@ export const Cover = styled.div`
   `}
 `
 
-export const FWrapper = styled(Container)`
-  ${({ theme }) => css`
-    ${media.greaterThan('medium')`
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: ${theme.grid.gutter};
-    `}
-  `}
-`
-
-export const FContent = styled.div`
-  margin-bottom: 30px;
-  border-radius: 10px;
-  padding: 40px 30px;
-  background-color: #f9f9f9;
-  transition: $transition;
-  border-bottom: 2px solid #eee;
-
-  ${media.lessThan('medium')`
-    padding: 20px 30px;
-    margin-bottom: 20px;
-  `}
-`
-
-export const FTitle = styled.h1`
-  ${({ theme }) => css`
-    font-size: ${theme.font.sizes.xlarge};
-    line-height: ${theme.font.sizes.xlarge};
-    font-weight: ${theme.font.bold};
-    color: ${theme.colors.black};
-
-    ${media.lessThan('medium')`
-      font-size: ${theme.font.sizes.medium};
-    `}
-  `}
-`
-
-export const FIcon = styled.div`
-  ${({ theme }) => css`
-    color: ${theme.colors.primary};
-    right: 1rem;
-    top: -0.5rem;
-    padding-bottom: 1rem;
-    svg {
-      width: 6.5rem;
-    }
-
-    ${media.lessThan('medium')`
-      svg {
-        width: 3.5rem;
-      }
-    `}
-  `}
-`
-
-export const FDescription = styled.div`
-  ${({ theme }) => css`
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin-top: ${theme.spacings.xxsmall};
-    color: ${theme.colors.gray};
-
-    ${media.lessThan('medium')`
-      font-size: ${theme.font.sizes.small};
-    `}
-  `}
-`
-
 export const SectionClients = styled.div`
   ${({ theme }) => css`
     margin-bottom: calc(${theme.spacings.xxlarge} * 2);
     background-color: ${theme.colors.mainBg};
 
     ${media.greaterThan('large')`
-      margin-top: -13rem;
+      margin-top: -1rem;
     `}
 
     ${media.greaterThan('medium')`
@@ -245,6 +147,7 @@ export const SectionClients = styled.div`
     `}
 
     ${media.lessThan('medium')`
+      margin-top: 3rem;
       height: 135rem;
       padding-left: 1rem;
       padding-right: 1rem;
@@ -263,6 +166,7 @@ export const CTitle = styled.h1`
     max-width: 900px;
     color: white;
     font-weight: ${theme.font.normal};
+    font-size: ${theme.font.sizes.huge};
     margin: {
       left: auto;
       right: auto;
@@ -276,7 +180,7 @@ export const CTitle = styled.h1`
     ${media.lessThan('medium')`
       padding-left: 1rem;
       padding-bottom: 1rem;
-      font-size: ${theme.font.sizes.large};
+      font-size: ${theme.font.sizes.xxlarge};
     `}
   `}
 `
@@ -284,16 +188,16 @@ export const CTitle = styled.h1`
 export const CSubtitle = styled.div`
   ${({ theme }) => css`
     text-transform: uppercase;
-    color: ${theme.colors.secondary};
+    color: ${theme.colors.primary};
     margin-bottom: 10px;
     margin-left: auto;
     margin-right: auto;
     align-items: center;
     justify-content: center;
     text-align: center;
-    max-width: 720px;
+    max-width: 900px;
     font-weight: ${theme.font.bold};
-    font-size: ${theme.font.sizes.small};
+    font-size: ${theme.font.sizes.large};
     padding-top: 1rem;
 
     ${media.lessThan('medium')`
@@ -304,12 +208,11 @@ export const CSubtitle = styled.div`
   `}
 `
 
-export const CImages = styled(Container)`
-  padding-top: 6rem;
+export const CImage = styled(Container)`
   ${({ theme }) => css`
     ${media.greaterThan('medium')`
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: ${theme.grid.gutter};
     `}
   `}
@@ -318,6 +221,11 @@ export const CImages = styled(Container)`
 export const CImagesCard = styled.div`
   margin-bottom: 30px;
   justify-self: center;
+
+  ${media.lessThan('medium')`
+      margin-top: 6rem;
+      margin-bottom: -10rem;
+    `}
 `
 
 export const SectionNumbers = styled.div`
@@ -360,7 +268,7 @@ export const NContent = styled.div`
   ${({ theme }) => css`
     margin-bottom: 1px;
     border-radius: 10px;
-    padding: 30px 30px;
+    padding: 25px 25px;
     background-color: ${theme.colors.lightBg};
     transition: $transition;
     align-self: center;
@@ -370,7 +278,7 @@ export const NContent = styled.div`
 
 export const NBox = styled.div`
   ${({ theme }) => css`
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     text-align: center;
     transition: $transition;
     position: relative;
@@ -380,6 +288,57 @@ export const NBox = styled.div`
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: ${theme.grid.gutter};
+    `}
+  `}
+`
+
+export const NTitle = styled.h1`
+  ${({ theme }) => css`
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 720px;
+    font-weight: ${theme.font.normal};
+    margin: {
+      left: auto;
+      right: auto;
+      bottom: 55px;
+    }
+
+    strong {
+      color: ${theme.colors.primary};
+    }
+
+    ${media.lessThan('medium')`
+      padding-left: 1rem;
+      padding-bottom: 1rem;
+      background-color: ${theme.colors.lightBg};
+      font-size: ${theme.font.sizes.large};
+    `}
+  `}
+`
+
+export const NSubTitle = styled.h3`
+  ${({ theme }) => css`
+    text-transform: uppercase;
+    color: ${theme.colors.secondary};
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 720px;
+    font-weight: ${theme.font.bold};
+    font-size: ${theme.font.sizes.small};
+
+    ${media.lessThan('medium')`
+      padding-top: 1rem;
+      padding-left: 1rem;
+      background-color: ${theme.colors.lightBg};
+      font-size: ${theme.font.sizes.xsmall};
     `}
   `}
 `
@@ -455,5 +414,49 @@ export const NIcon = styled.div`
         width: 3.5rem;
       }
     `}
+  `}
+`
+
+export const RedesSociais = styled.div`
+  ${({ theme }) => css`
+    margin-top: 7rem;
+    display: grid;
+    grid-template-columns: 3fr;
+    gap: ${theme.grid.gutter};
+  `}
+`
+
+export const RSBox = styled.div`
+  ${({ theme }) => css`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: ${theme.grid.gutter};
+  `}
+`
+
+export const RSImage = styled.div`
+  display: inline-block;
+  justify-self: right;
+
+  ${media.greaterThan('large')`
+      justify-self: right;
+  `}
+
+  ${media.lessThan('medium')`
+      justify-self: left;
+  `}
+`
+
+export const RSText = styled.a`
+  ${({ theme }) => css`
+    margin-top: 2rem;
+    color: ${theme.colors.white};
+    justify-self: left;
+    text-decoration: none;
+
+    ${media.lessThan('medium')`
+      justify-self: left;
+      font-size; ${theme.font.sizes.xsmall}
+   `}
   `}
 `

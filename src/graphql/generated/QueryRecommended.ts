@@ -40,13 +40,19 @@ export interface QueryRecommended_recommended_section_courses_instructor {
   name: string;
 }
 
+export interface QueryRecommended_recommended_section_courses_category {
+  __typename: "Category";
+  name: string;
+}
+
 export interface QueryRecommended_recommended_section_courses {
   __typename: "Course";
   id: string;
   name: string;
-  slug: string;
+  slug: string | null;
   cover: QueryRecommended_recommended_section_courses_cover | null;
   instructor: QueryRecommended_recommended_section_courses_instructor | null;
+  category: QueryRecommended_recommended_section_courses_category | null;
   price: number;
 }
 

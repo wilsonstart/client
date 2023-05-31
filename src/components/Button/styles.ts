@@ -11,16 +11,28 @@ const wrapperModifiers = {
   small: (theme: DefaultTheme) => css`
     height: 3rem;
     font-size: ${theme.font.sizes.xsmall};
+
+    &:focus {
+      box-shadow: 0 0 0.5rem ${theme.colors.primary};
+    }
   `,
   medium: (theme: DefaultTheme) => css`
     height: 4rem;
     font-size: ${theme.font.sizes.small};
     padding: ${theme.spacings.xxsmall} ${theme.spacings.medium};
+
+    &:focus {
+      box-shadow: 0 0 0.5rem ${theme.colors.primary};
+    }
   `,
   large: (theme: DefaultTheme) => css`
     height: 5rem;
     font-size: ${theme.font.sizes.medium};
     padding: ${theme.spacings.xxsmall} ${theme.spacings.xlarge};
+
+    &:focus {
+      box-shadow: 0 0 0.5rem ${theme.colors.primary};
+    }
   `,
   fullWidth: () => css`
     width: 100%;
@@ -33,6 +45,9 @@ const wrapperModifiers = {
         margin-left: ${theme.spacings.xxsmall};
       }
     }
+    &:focus {
+      box-shadow: 0 0 0.5rem ${theme.colors.white};
+    }
   `,
   minimal: (theme: DefaultTheme) => css`
     background: none;
@@ -40,6 +55,9 @@ const wrapperModifiers = {
 
     &:hover {
       color: ${darken(0.1, theme.colors.primary)};
+    }
+    &:focus {
+      box-shadow: 0 0 0.5rem ${theme.colors.white};
     }
   `,
   disabled: () => css`
