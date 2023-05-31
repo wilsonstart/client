@@ -208,7 +208,7 @@ const WishlistProvider = ({ children }: WishlistProviderProps) => {
           id: course.id,
           title: course.name,
           slug: course.slug,
-          instructor: course.instructor?.name,
+          category: course.category?.name,
           img: `${getImageUrl(course.cover?.url)}`,
           price: course.price
         })),

@@ -20,7 +20,6 @@ export const WithPayment: Story<CourseItemProps> = (args) => (
 )
 
 WithPayment.args = {
-  downloadLink: 'https://wongames.com/game/download/21312ndasd',
   paymentInfo: {
     flag: 'mastercard',
     img: '/img/master-card.png',

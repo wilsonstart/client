@@ -26,10 +26,10 @@ export interface QueryWishlist_wishlists_courses {
   __typename: "Course";
   id: string;
   name: string;
-  slug: string | null;
-  cover: QueryWishlist_wishlists_courses_cover | null;
-  instructor: QueryWishlist_wishlists_courses_instructor | null;
-  category: QueryWishlist_wishlists_courses_category | null;
+  slug: string;
+  cover: QueryWishlist_wishlists_courses_cover;
+  instructor: QueryWishlist_wishlists_courses_instructor;
+  category: QueryWishlist_wishlists_courses_category;
   price: number;
 }
 
