@@ -123,13 +123,31 @@ const LadingPage = () => (
         <S.NContent>
           <S.CredBox>
             <S.CredSingleBox>
-              <Image src="/img/clients-01.png" width={750} height={100} />
+              <Image src="/clients/client-01.png" width={158} height={159} />
+            </S.CredSingleBox>
+            <S.CredSingleBox>
+              <Image src="/clients/client-02.png" width={158} height={159} />
+            </S.CredSingleBox>
+            <S.CredSingleBox>
+              <Image src="/clients/client-03.png" width={158} height={159} />
+            </S.CredSingleBox>
+            <S.CredSingleBox>
+              <Image src="/clients/client-04.png" width={158} height={159} />
             </S.CredSingleBox>
           </S.CredBox>
 
           <S.CredBox>
             <S.CredSingleBox>
-              <Image src="/img/clients-02.png" width={850} height={80} />
+              <Image src="/clients/client-05.png" width={158} height={159} />
+            </S.CredSingleBox>
+            <S.CredSingleBox>
+              <Image src="/clients/client-06.png" width={158} height={159} />
+            </S.CredSingleBox>
+            <S.CredSingleBox>
+              <Image src="/clients/client-07.png" width={158} height={159} />
+            </S.CredSingleBox>
+            <S.CredSingleBox>
+              <Image src="/clients/client-08.png" width={158} height={159} />
             </S.CredSingleBox>
           </S.CredBox>
         </S.NContent>

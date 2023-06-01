@@ -247,7 +247,7 @@ export const SectionNumbers = styled.div`
 
     ${media.lessThan('medium')`
       margin-bottom: 5rem;
-      height: 135rem;
+      height: 295rem;
       padding-left: 1rem;
       padding-right: 1rem;
       background-color: ${theme.colors.lightBg};
@@ -351,7 +351,7 @@ export const CredBox = styled.div`
 
     ${media.greaterThan('medium')`
       display: grid;
-      grid-template-columns: 2fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
       gap: ${theme.grid.gutter};
     `}
 
@@ -391,13 +391,10 @@ export const CredSingleBox = styled.div`
   position: relative;
 
   ${media.lessThan('medium')`
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    background-color: white;
-      svg {
-        width: 3.5rem;
-      }
-    `}
+      max-width: 100px;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+  `}
 `
 
 export const NIcon = styled.div`
