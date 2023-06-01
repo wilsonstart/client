@@ -27,6 +27,7 @@ export const TextUp = styled.div`
     font-weight: ${theme.font.bold};
 
     ${media.lessThan('medium')`
+      margin-bottom: 2rem;
       font-size: ${theme.font.sizes.small}
     `}
 
@@ -59,7 +60,7 @@ export const Title = styled.h1`
       padding-left: 1rem;
       padding-bottom: 1rem;
       background-color: ${theme.colors.lightBg};
-      font-size: ${theme.font.sizes.large};
+      font-size: ${theme.font.sizes.small};
     `}
   `}
 `
@@ -147,7 +148,7 @@ export const SectionClients = styled.div`
     `}
 
     ${media.lessThan('medium')`
-      margin-top: 3rem;
+      margin-top: 1rem;
       height: 135rem;
       padding-left: 1rem;
       padding-right: 1rem;
@@ -224,7 +225,7 @@ export const CImagesCard = styled.div`
 
   ${media.lessThan('medium')`
       margin-top: 6rem;
-      margin-bottom: -10rem;
+      margin-bottom: -5rem;
     `}
 `
 
@@ -350,7 +351,7 @@ export const CredBox = styled.div`
 
     ${media.greaterThan('medium')`
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 2fr;
       gap: ${theme.grid.gutter};
     `}
 
@@ -444,6 +445,7 @@ export const RSImage = styled.div`
 
   ${media.lessThan('medium')`
       justify-self: left;
+      margin-bottom: -1rem;
   `}
 `
 
@@ -453,6 +455,23 @@ export const RSText = styled.a`
     color: ${theme.colors.white};
     justify-self: left;
     text-decoration: none;
+
+    ${media.lessThan('medium')`
+      justify-self: left;
+      font-size: ${theme.font.sizes.xsmall}
+   `}
+  `}
+`
+
+export const SectionFooter = styled.p`
+  ${({ theme }) => css`
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    background: ${theme.colors.mainBg};
+    color: ${theme.colors.white};
+    text-align: center;
+    justify-items: center;
+    font-size: ${theme.font.sizes.small};
 
     ${media.lessThan('medium')`
       justify-self: left;

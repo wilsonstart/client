@@ -8,7 +8,8 @@ import {
   QueryStats,
   School
 } from '@styled-icons/material-outlined'
-import { Graduation } from '@styled-icons/boxicons-solid'
+
+const currentYear = new Date().getFullYear()
 
 const LadingPage = () => (
   <S.Wrapper>
@@ -63,7 +64,7 @@ const LadingPage = () => (
           </S.RedesSociais>
         </S.CImagesCard>
         <S.CImagesCard>
-          <Image src="/img/courses-01.png" width="600" height="600"></Image>
+          <Image src="/img/courses-02.png" width="600" height="600"></Image>
         </S.CImagesCard>
       </S.CImage>
     </S.SectionClients>
@@ -122,38 +123,22 @@ const LadingPage = () => (
         <S.NContent>
           <S.CredBox>
             <S.CredSingleBox>
-              <Image
-                src="/clients/logo-exercito.png"
-                width={140}
-                height={140}
-              />
-            </S.CredSingleBox>
-
-            <S.CredSingleBox>
-              <Image
-                src="/clients/logo-forcaaerea.png"
-                width={140}
-                height={140}
-              />
-            </S.CredSingleBox>
-
-            <S.CredSingleBox>
-              <Image src="/clients/logo-marinha.png" width={130} height={180} />
+              <Image src="/img/clients-01.png" width={750} height={100} />
             </S.CredSingleBox>
           </S.CredBox>
 
           <S.CredBox>
             <S.CredSingleBox>
-              <Image src="/cred/crc.png" width={120} height={100} />
-            </S.CredSingleBox>
-
-            <S.CredSingleBox>
-              <Image src="/cred/abed.png" width={130} height={60} />
+              <Image src="/img/clients-02.png" width={850} height={80} />
             </S.CredSingleBox>
           </S.CredBox>
         </S.NContent>
       </S.NWrapper>
     </S.SectionNumbers>
+
+    <S.SectionFooter>
+      <p>Escola START {currentYear} © Todos os Direitos Reservados.</p>
+    </S.SectionFooter>
   </S.Wrapper>
 )
 
