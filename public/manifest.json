@@ -1,6 +1,6 @@
 {
-  "name": "Won Games",
-  "short_name": "Won Games",
+  "name": "Escola START",
+  "short_name": "Escola START",
   "icons": [
     {
       "src": "/img/icon-192.png",
@@ -14,7 +14,7 @@
     }
   ],
   "background_color": "#06092B",
-  "description": "The best Game Store in the world!",
+  "description": "A maior escola profissional",
   "display": "fullscreen",
   "start_url": "/",
   "theme_color": "#06092B"
