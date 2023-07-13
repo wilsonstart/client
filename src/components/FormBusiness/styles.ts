@@ -27,7 +27,6 @@ export const FormImageWrapper = styled.div`
     height: auto;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
   `}
 
   width: auto;
@@ -63,6 +62,10 @@ export const ImageDescription = styled.div`
 
   top: 0;
   position: absolute;
+
+  -webkit-box-shadow: inset 10px 10px 88px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: inset 10px 10px 88px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 10px 10px 88px 0px rgba(0, 0, 0, 0.75);
 
   > span {
     font-size: ${() => theme.font.sizes.xsmall};
