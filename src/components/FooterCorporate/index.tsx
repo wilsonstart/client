@@ -43,10 +43,18 @@ const FooterCorporate = () => {
         <span>
           Siga as nossas redes sociais:
           <S.Anchors>
-            <a href="#">
+            <a
+              href="https://www.instagram.com/_escolastart/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <Instagram />
             </a>
-            <a href="#">
+            <a
+              href="https://www.facebook.com/canaisstart"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FacebookCircle />
             </a>
           </S.Anchors>

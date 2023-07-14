@@ -16,6 +16,7 @@ export const FormContainer = styled.div`
   align-items: center;
   flex-grow: 1;
   background-color: #d9d9d9;
+  overflow: hidden;
 `
 
 export const FormImageWrapper = styled.div`
@@ -36,7 +37,6 @@ export const ImageContainer = styled.div`
   position: relative;
 
   width: 40%;
-  aspect-ratio: 1.07/1;
   min-height: auto;
 
   overflow: hidden;
@@ -56,9 +56,8 @@ export const ImageDescription = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 1rem;
-
-  padding: 0 2rem;
 
   top: 0;
   position: absolute;
@@ -68,7 +67,12 @@ export const ImageDescription = styled.div`
   box-shadow: inset 10px 10px 88px 0px rgba(0, 0, 0, 0.75);
 
   > span {
+    width: 242px;
     font-size: ${() => theme.font.sizes.xsmall};
     color: ${() => theme.colors.gray};
+  }
+
+  > h2 {
+    width: 242px;
   }
 `
