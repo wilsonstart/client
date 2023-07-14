@@ -20,11 +20,8 @@ export const FlexGap = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${theme.spacings.small};
-`
 
-export const List = styled.ul`
-
-`
-
-export const Card = styled.li`
+  .slick-dots {
+    display: none !important;
+  }
 `

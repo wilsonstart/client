@@ -1,12 +1,9 @@
 import { Container } from 'components/Container'
 import * as S from './style'
 import Heading from 'components/Heading'
-import Render from 'components/Render'
 import FeedbackCard from 'components/FeedbackCard'
 import { feedbacks } from './mocks'
-import { Grid } from 'components/Grid'
 import Slider from 'components/Slider'
-import { useState, useEffect } from 'react'
 import { settings } from './sliderConfig'
 import Button from 'components/Button'
 
