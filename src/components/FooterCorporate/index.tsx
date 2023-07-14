@@ -1,13 +1,10 @@
 import Logo from 'components/Logo'
 import * as S from './style'
 import Heading from 'components/Heading'
-import { Divider } from 'components/Divider'
 import TextField from 'components/TextField'
 import { Email } from '@styled-icons/material-outlined'
 import { FacebookCircle } from '@styled-icons/remix-fill'
-import Button from 'components/Button'
 import { Instagram } from '@styled-icons/fa-brands'
-import Link from 'next/link'
 
 const FooterCorporate = () => {
   return (

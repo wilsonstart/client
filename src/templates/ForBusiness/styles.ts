@@ -1,11 +1,11 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import media from 'styled-media-query'
 
 import theme from 'styles/theme'
 
 export const Wrapper = styled.menu`
   padding: 2.4rem 0;
-  
+
   display: flex;
   justify-content: space-between;
   align-items: center;

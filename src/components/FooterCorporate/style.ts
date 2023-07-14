@@ -82,7 +82,6 @@ export const Anchors = styled.div`
 
   > a {
     width: 16px;
-    color: white
+    color: white;
   }
-
 `
