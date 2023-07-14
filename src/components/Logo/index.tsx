@@ -6,19 +6,17 @@ export type LogoProps = {
   size?: 'normal' | 'large'
   hideOnMobile?: boolean
   id?: string
-  src?: string
 }
 
 const Logo = ({
   // id = 'logo',
   // color = 'white',
   // size = 'normal',
-  hideOnMobile = false,
-  src
+  hideOnMobile = false
 }: LogoProps) => (
   <S.Wrapper hideOnMobile={hideOnMobile}>
     <Image
-      src={src ? src : '/img/logo-start-white-02.png'}
+      src="/img/logo-start-white-02.png"
       width={130}
       height={50}
       alt="Logo START"
